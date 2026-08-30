@@ -223,11 +223,11 @@ def build():
     <div class="hero-card">
       <p class="eyebrow">Il metodo, in una riga</p>
       <ol class="steps">
-        <li><strong>Ascolto</strong> la tua storia, non solo il sintomo</li>
-        <li><strong>Osservo</strong> come ti muovi, tutto intero</li>
-        <li><strong>Valuto</strong> con test precisi cosa regge e cosa no</li>
-        <li><strong>Ragiono</strong> su da dove arriva il problema</li>
-        <li><strong>Intervengo</strong> solo dove ha senso</li>
+        <li><strong>Ascolto</strong> la tua storia, non solo i sintomi</li>
+        <li><strong>Osservo</strong> come ti muovi, globalmente</li>
+        <li><strong>Valuto</strong> con test la tua condizione</li>
+        <li><strong>Ragiono</strong> sulla causa dei tuoi problemi</li>
+        <li><strong>Intervengo</strong> sulla causa in modo efficace</li>
         <li><strong>Rivaluto</strong> per misurare cosa è cambiato</li>
       </ol>
     </div>
