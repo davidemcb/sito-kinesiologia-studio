@@ -178,7 +178,13 @@ In funzione della finalità, si distinguono: **cookies tecnici** (di navigazione
 
 ### I cookies di questo sito
 
-Questo sito non usa cookies diretti di profilazione né cookies analitici: le sue pagine sono statiche e non installano cookies propri. I caratteri tipografici sono caricati da Google Fonts. I servizi esterni raggiungibili tramite link o pulsanti — Calendly per la prenotazione, WhatsApp, SumUp per i pagamenti dei voucher, Google Maps, Brevo per la newsletter — possono installare propri cookies sulle rispettive pagine, in qualità di autonomi titolari: si rinvia alle loro informative.
+Questo sito utilizza due sole categorie di cookies propri, descritte di seguito.
+
+**Cookie tecnico del consenso.** Alla prima visita compare un banner per la gestione dei cookies: la scelta dell'utente viene memorizzata in un cookie tecnico (cc_cookie), necessario a ricordare la preferenza espressa. In quanto cookie tecnico, non richiede consenso.
+
+**Cookies di marketing (Google Ads).** Solo se l'utente acconsente tramite il banner viene caricato il tag di Google Ads (Google Ireland Limited), che può installare cookies per misurare le conversioni delle campagne pubblicitarie del Titolare (ad esempio i clic sui pulsanti "Chiama" e "Prenota"), con indirizzo IP anonimizzato. Senza consenso il tag non viene caricato e nessun cookie di marketing viene installato. La scelta può essere revocata in qualsiasi momento eliminando i cookies dal browser: alla visita successiva il banner verrà riproposto. Per maggiori informazioni si rinvia all'informativa di Google: policies.google.com/privacy.
+
+I caratteri tipografici sono caricati da Google Fonts. I servizi esterni raggiungibili tramite link o pulsanti — Calendly per la prenotazione, WhatsApp, SumUp per i pagamenti dei voucher, Google Maps, Brevo per la newsletter — possono installare propri cookies sulle rispettive pagine, in qualità di autonomi titolari: si rinvia alle loro informative.
 
 ### Come controllare o eliminare i cookies
 
