@@ -72,7 +72,7 @@ I primi minuti sono tuoi. Da quanto tempo, com'è cominciato, cosa lo peggiora e
 
 ## 2. Osservo — come ti muovi, tutto intero
 
-Ti guardo in piedi, mentre cammini, mentre ti pieghi, mentre ruoti. Non guardo solo la zona che indichi con il dito: guardo come il resto del corpo la sta aiutando o la sta caricando. Un collo che si irrigidisce sempre allo stesso modo spesso ha sotto un dorso che non collabora; un tallone che duole al mattino a volte dipende da un'anca che ha perso rotazione. Non sono regole fisse, sono ipotesi: e le ipotesi si verificano.
+Ti guardo in piedi, mentre cammini, mentre ti pieghi, mentre ruoti. Non guardo solo la zona che indichi con il dito: guardo come il resto del corpo la sta aiutando o la sta caricando. Un collo che si irrigidisce sempre allo stesso modo spesso ha sotto un dorso che non collabora; un tallone che duole al mattino a volte dipende da un'anca che ha perso mobilità. Non sono regole fisse, sono ipotesi: e le ipotesi si verificano.
 
 ## 3. Valuto — test precisi, ripetibili
 
@@ -206,7 +206,7 @@ Le storie sono diverse ma si somigliano: un blocco improvviso chinandosi (il cla
 
 ## Perché lo stesso sintomo può avere origini diverse
 
-La colonna non lavora da sola: sta in mezzo a un bacino, due anche, un diaframma che respira e un dorso che ruota. Quando uno di questi anelli fa meno del dovuto — un'anca che ha perso rotazione, un diaframma che non scende, un dorso irrigidito dalla scrivania — il carico non sparisce: se lo prende la zona lombare, che regge finché può. Poi fa male. Ma non è lei il colpevole: è quella che ha retto più a lungo.
+La colonna non lavora da sola: sta in mezzo a un bacino, due anche, un diaframma che respira e un dorso che ruota. Quando uno di questi anelli fa meno del dovuto — un'anca che ha perso mobilità, un diaframma che non scende, un dorso irrigidito dalla scrivania — il carico non sparisce: se lo prende la zona lombare, che regge finché può. Poi fa male. Ma non è lei il colpevole: è quella che ha retto più a lungo.
 
 Ci sono anche schiene che fanno male perché sono state messe in pensione: dopo un episodio si smette di caricarle, i tessuti si indeboliscono, la soglia dell'allarme si abbassa, e sollevare la cassa dell'acqua diventa un problema. Stessa parola, «mal di schiena», ma qui l'intervento è quasi l'opposto: non calmare, ma ricostruire tolleranza un po' alla volta.
 
