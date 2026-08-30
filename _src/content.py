@@ -206,7 +206,7 @@ Le storie sono diverse ma si somigliano: un blocco improvviso chinandosi (il cla
 
 ## Perché lo stesso sintomo può avere origini diverse
 
-La colonna non lavora da sola: sta in mezzo a un bacino, due anche, un diaframma che respira e un dorso che ruota. Quando uno di questi anelli fa meno del dovuto — un'anca che ha perso mobilità, un diaframma che non scende, un dorso irrigidito dalla scrivania — il carico non sparisce: se lo prende la zona lombare, che regge finché può. Poi fa male. Ma non è lei il colpevole: è quella che ha retto più a lungo.
+La colonna non lavora da sola: sta in mezzo a un bacino, due anche, un diaframma che respira e un dorso che ruota. Quando uno di questi anelli fa meno del dovuto — un'anca che ha perso mobilità, un diaframma che non scende, un dorso irrigidito dalla scrivania — il carico non sparisce: se lo prende la zona lombare, che regge finché può. Poi fa male. Ma non è lei la colpevole: è quella che ha retto più a lungo.
 
 Ci sono anche schiene che fanno male perché sono state messe in pensione: dopo un episodio si smette di caricarle, i tessuti si indeboliscono, la soglia dell'allarme si abbassa, e sollevare la cassa dell'acqua diventa un problema. Stessa parola, «mal di schiena», ma qui l'intervento è quasi l'opposto: non calmare, ma ricostruire tolleranza un po' alla volta.
 
