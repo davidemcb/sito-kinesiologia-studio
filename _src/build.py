@@ -120,7 +120,7 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
     </div>
     <div>
       <p><strong>Orari</strong><br>Lunedì–Venerdì 9:00–20:00<br>Sabato 9:00–15:00</p>
-      <p><a class="btn btn-sm" href="{SITE['calendly']}" target="_blank" rel="noopener">Prenota online</a>
+      <p><a class="btn btn-sm" href="{SITE['prenota']}" target="_blank" rel="noopener">Prenota online</a>
       <a class="btn btn-sm btn-ghost" href="{SITE['whatsapp']}" target="_blank" rel="noopener">WhatsApp</a></p>
     </div>
     <div>
@@ -173,7 +173,7 @@ def cta_block(depth=0, title="Hai un fastidio che torna sempre?", text="La prima
     <h2>{esc(title)}</h2>
     <p>{esc(text)}</p>
     <p class="btn-row">
-      <a class="btn btn-light" href="{SITE['calendly']}" target="_blank" rel="noopener">Prenota la prima valutazione</a>
+      <a class="btn btn-light" href="{SITE['prenota']}" target="_blank" rel="noopener">Prenota la prima valutazione</a>
       <a class="btn btn-outline-light" href="{SITE['whatsapp']}" target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
     </p>
     <p class="small">60 minuti · Via Capilupi 21, Modena · <a href="{p}prima-valutazione.html">Cosa succede alla prima valutazione</a></p>
@@ -215,7 +215,7 @@ def build():
       <h1>Prima di trattare, <em>bisogna capire.</em></h1>
       <p class="lead">Schiena, cervicale, spalla, postura: il dolore ti dice dove fa male, non perché. Alla prima valutazione cerchiamo il perché — e solo dopo decidiamo se, come e dove intervenire.</p>
       <p class="btn-row">
-        <a class="btn" href="{SITE['calendly']}" target="_blank" rel="noopener">Prenota la prima valutazione</a>
+        <a class="btn" href="{SITE['prenota']}" target="_blank" rel="noopener">Prenota la prima valutazione</a>
         <a class="btn btn-ghost" href="prima-valutazione.html">Come funziona</a>
       </p>
       <p class="proof">★★★★★ <strong>5,0 su Google</strong> · 128 recensioni · <a href="{SITE['google_reviews']}" target="_blank" rel="noopener">leggile tutte</a></p>
@@ -287,7 +287,7 @@ def build():
     body = f"""
 <section class="page-head"><div class="wrap">
   <p class="eyebrow">{esc(pv['eyebrow'])}</p><h1>{esc(pv['title'])}</h1><p class="lead">{esc(pv['lead'])}</p>
-  <p class="btn-row"><a class="btn" href="{SITE['calendly']}" target="_blank" rel="noopener">Prenota la prima valutazione</a> <a class="btn btn-ghost" href="{SITE['whatsapp']}" target="_blank" rel="noopener">Prima una domanda su WhatsApp</a></p>
+  <p class="btn-row"><a class="btn" href="{SITE['prenota']}" target="_blank" rel="noopener">Prenota la prima valutazione</a> <a class="btn btn-ghost" href="{SITE['whatsapp']}" target="_blank" rel="noopener">Prima una domanda su WhatsApp</a></p>
 </div></section>
 <section class="section media-band"><div class="wrap photo-row">
   <figure class="photo"><img src="assets/colloquio.jpg" alt="Davide Scuderi ascolta un paziente alla scrivania dello studio" loading="lazy"><figcaption>Prima si ascolta</figcaption></figure>
@@ -314,7 +314,7 @@ def build():
         body = f"""
 <section class="page-head"><div class="wrap">
   <p class="eyebrow">{esc(pr['eyebrow'])}</p><h1>{esc(pr['h1'])}</h1><p class="lead">{esc(pr['lead'])}</p>
-  <p class="btn-row"><a class="btn" href="{SITE['calendly']}" target="_blank" rel="noopener">Prenota la prima valutazione</a> <a class="btn btn-ghost" href="tel:+393481514382">Chiama 348 151 4382</a></p>
+  <p class="btn-row"><a class="btn" href="{SITE['prenota']}" target="_blank" rel="noopener">Prenota la prima valutazione</a> <a class="btn btn-ghost" href="tel:+393481514382">Chiama 348 151 4382</a></p>
 </div></section>
 <section class="section media-band"><div class="wrap"><figure class="photo"><img src="../assets/{pr['img']}" alt="{esc(pr['alt'])}" loading="lazy"></figure></div></section>
 <section class="section"><div class="wrap prose">{paras(pr['body'])}</div></section>
@@ -421,7 +421,7 @@ def build():
   <p class="lead">Scegli il modo che preferisci. Se non sai se il tuo caso fa per me, scrivimi due righe: ti rispondo io.</p>
 </div></section>
 <section class="section"><div class="wrap grid-3 contact-grid">
-  <div class="card"><p class="eyebrow">Prenota online</p><h3>Calendario</h3><p>Scegli giorno e ora, ricevi conferma via email e un promemoria prima dell'appuntamento.</p><a class="btn" href="{SITE['calendly']}" target="_blank" rel="noopener">Apri il calendario</a></div>
+  <div class="card"><p class="eyebrow">Prenota online</p><h3>Calendario</h3><p>Scegli giorno e ora, ricevi conferma via email e un promemoria prima dell'appuntamento.</p><a class="btn" href="{SITE['prenota']}" target="_blank" rel="noopener">Apri il calendario</a></div>
   <div class="card"><p class="eyebrow">Scrivimi</p><h3>WhatsApp</h3><p>Per una domanda prima di prenotare, o per un orario che non trovi nel calendario.</p><a class="btn btn-ghost" href="{SITE['whatsapp']}" target="_blank" rel="noopener">Apri WhatsApp</a></div>
   <div class="card"><p class="eyebrow">Chiama</p><h3>348 151 4382</h3><p>Se sono in seduta non rispondo: lascia un messaggio, ti richiamo appena posso.</p><a class="btn btn-ghost" href="tel:+393481514382">Chiama ora</a></div>
 </div></section>

@@ -5,7 +5,7 @@ SITE = {
     'name': 'Kinesiologia Studio',
     'url': 'https://kinesiologiastudio.it',
     'email': 'infokinesiologia@gmail.com',
-    'calendly': 'https://calendly.com/infokinesiologia/consulenza',
+    'prenota': 'https://calendly.com/infokinesiologia/consulenza',
     'whatsapp': 'https://wa.me/393481514382?text=Ciao%20Davide%2C%20ti%20scrivo%20dal%20sito%3A%20',
     'google_reviews': 'https://www.google.com/maps/search/?api=1&query=Kinesiologia+Studio+Modena+Via+Capilupi',
     'app': 'https://davidemcb.github.io/kinesiologia-studio/',

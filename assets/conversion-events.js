@@ -32,31 +32,6 @@ function trackConversion(type) {
   return true; // Allow links to proceed
 }
 
-/**
- * Setup Calendly conversion tracking
- * Listens for Calendly event scheduled messages
- */
-function setupCalendlyConversion() {
-  if (window.Calendly) {
-    window.Calendly.initInlineWidget({
-      url: 'https://calendly.com/scuderidavide/prima-valutazione',
-      parentElement: document.getElementById('calendly-inline-widget')
-    });
-
-    // Listen for Calendly events
-    window.addEventListener('message', function(event) {
-      if (event.data.event && event.data.event.indexOf('calendly') === 0) {
-        if (event.data.event === 'calendly.event_scheduled') {
-          trackConversion('prenota');
-        }
-      }
-    });
-  }
-}
-
-// Initialize Calendly conversion tracking when page loads
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', setupCalendlyConversion);
-} else {
-  setupCalendlyConversion();
-}
+// La prenotazione avviene sulla pagina appuntamenti di Google Calendar,
+// che si apre in una nuova scheda: la conversione viene tracciata al clic
+// sul pulsante tramite onclick="trackConversion('prenota')".
