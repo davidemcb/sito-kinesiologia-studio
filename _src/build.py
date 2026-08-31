@@ -130,7 +130,7 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
         <li><a href="{p}trattamenti.html">Trattamenti e prezzi</a></li>
         <li><a href="{p}blog/index.html">Blog</a></li>
         <li><a href="{p}regala.html">Regala un trattamento</a></li>
-        <li><a href="{SITE['app']}" target="_blank" rel="noopener">L'app dello Studio</a></li>
+        <li><a href="{p}app.html">L'app dello Studio</a></li>
         <li><a href="{p}privacy.html">Privacy e cookie</a></li>
       </ul>
     </div>
@@ -277,6 +277,30 @@ def build():
     <p class="center"><a class="more" href="blog/index.html">Tutti gli articoli →</a></p>
   </div>
 </section>
+
+<section class="section" id="app">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Gratis, per chi viene in studio</p>
+      <h2>L'app dello Studio, tra un trattamento e l'altro</h2>
+      <p>Il trattamento dura un'ora: il resto del mese lo passi tu con il tuo corpo. L'app ti ricorda quando è il momento del controllo, ti dà gli esercizi di prevenzione per la zona che senti e ti fa segnare come stai, giorno per giorno.</p>
+      <ul class="ticks">
+        <li><strong>Promemoria del check-up</strong>, con il conto dei giorni</li>
+        <li><strong>Esercizi per zona</strong>: schiena, cervicale, spalla, anca, gambe, mandibola</li>
+        <li><strong>Diario del corpo</strong>: un voto al giorno, il grafico lo guardiamo insieme</li>
+      </ul>
+      <p class="btn-row">
+        <a class="btn" href="{SITE['app']}" target="_blank" rel="noopener">Apri l'app</a>
+        <a class="btn btn-ghost" href="app.html">Cosa c'è dentro</a>
+      </p>
+    </div>
+    <div class="card quote-card">
+      <p class="eyebrow">Niente store, niente registrazione</p>
+      <p class="big-quote">Si apre da un link e la aggiungi alla schermata <em>Home</em>: da lì funziona come un'app, anche offline.</p>
+      <p class="small" style="color:#B9C4BD">Quello che segni resta sul tuo telefono.</p>
+    </div>
+  </div>
+</section>
 {newsletter_block()}
 {cta_block()}
 """
@@ -369,6 +393,25 @@ def build():
 <section class="section"><div class="wrap">
   <div class="grid-3">{cards}</div>
 </div></section>
+<section class="section alt"><div class="wrap split">
+  <div>
+    <p class="eyebrow">Gli stessi articoli, in tasca</p>
+    <h2>Nell'app c'è anche l'archivio</h2>
+    <p>L'app dello Studio raccoglie questi articoli insieme al falso mito della settimana, agli esercizi di prevenzione per la tua zona e al promemoria del prossimo controllo. Puoi anche proporre l'argomento di cui parlare la volta dopo.</p>
+    <p class="btn-row">
+      <a class="btn" href="{SITE['app']}" target="_blank" rel="noopener">Apri l'app</a>
+      <a class="btn btn-ghost" href="../app.html">Cosa c'è dentro</a>
+    </p>
+  </div>
+  <div class="card">
+    <p class="eyebrow">In due tocchi</p>
+    <ol class="steps">
+      <li>Apri l'app dal link: è una pagina, non un download</li>
+      <li>Aggiungila alla schermata Home</li>
+      <li>Funziona anche senza connessione</li>
+    </ol>
+  </div>
+</div></section>
 {newsletter_block(1)}
 """
     write('blog/index.html', layout('Blog — Kinesiologia Studio', 'Articoli per capire schiena, cervicale, spalla, postura e dolore: cosa osservare, cosa provare, quando farsi vedere.', body, depth=1, canonical='blog/index.html'))
@@ -420,10 +463,11 @@ def build():
   <p class="eyebrow">Contatti e prenotazione</p><h1>Prenota, scrivi o chiama</h1>
   <p class="lead">Scegli il modo che preferisci. Se non sai se il tuo caso fa per me, scrivimi due righe: ti rispondo io.</p>
 </div></section>
-<section class="section"><div class="wrap grid-3 contact-grid">
+<section class="section"><div class="wrap grid-4 contact-grid">
   <div class="card"><p class="eyebrow">Prenota online</p><h3>Calendario</h3><p>Scegli giorno e ora, ricevi conferma via email e un promemoria prima dell'appuntamento.</p><a class="btn" href="{SITE['calendly']}" target="_blank" rel="noopener">Apri il calendario</a></div>
   <div class="card"><p class="eyebrow">Scrivimi</p><h3>WhatsApp</h3><p>Per una domanda prima di prenotare, o per un orario che non trovi nel calendario.</p><a class="btn btn-ghost" href="{SITE['whatsapp']}" target="_blank" rel="noopener">Apri WhatsApp</a></div>
   <div class="card"><p class="eyebrow">Chiama</p><h3>348 151 4382</h3><p>Se sono in seduta non rispondo: lascia un messaggio, ti richiamo appena posso.</p><a class="btn btn-ghost" href="tel:+393481514382">Chiama ora</a></div>
+  <div class="card"><p class="eyebrow">Prevenzione</p><h3>L'app dello Studio</h3><p>Promemoria del check-up, esercizi per la tua zona e diario del corpo. Gratis, si aggiunge alla schermata Home.</p><a class="btn btn-ghost" href="app.html">Scopri l'app</a></div>
 </div></section>
 <section class="section media-band"><div class="wrap"><figure class="photo"><img src="assets/contatti.jpg" alt="Colloquio iniziale nello studio di Via Capilupi 21 a Modena" loading="lazy"></figure></div></section>
 <section class="section alt"><div class="wrap split">
@@ -448,6 +492,72 @@ def build():
 """
     write('contatti.html', layout('Contatti e prenotazione — Kinesiologia Studio Modena', 'Prenota online, scrivi su WhatsApp o chiama. Via Capilupi 21, Modena. Lun–Ven 9–20, Sab 9–15.', body, canonical='contatti.html'))
 
+    # APP
+    body = f"""
+<section class="page-head"><div class="wrap">
+  <p class="eyebrow">Gratis · niente da scaricare dagli store</p><h1>L'app dello Studio</h1>
+  <p class="lead">Il trattamento dura un'ora, il resto del mese lo passi tu con il tuo corpo. L'app serve a quello: ricordarti il controllo, darti gli esercizi giusti per la tua zona e tenere traccia di come stai, così quando torni in studio partiamo da dati, non da ricordi.</p>
+  <p class="btn-row">
+    <a class="btn" href="{SITE['app']}" target="_blank" rel="noopener">Apri l'app</a>
+    <a class="btn btn-ghost" href="#dentro">Cosa c'è dentro</a>
+  </p>
+  <p class="small">Si apre nel browser, come un sito. Se vuoi, la aggiungi alla schermata Home e da lì funziona come un'app, anche offline.</p>
+</div></section>
+
+<section class="section" id="dentro"><div class="wrap">
+  <p class="eyebrow">Cosa trovi dentro</p>
+  <h2>Sei cose che continuano a lavorare tra un trattamento e l'altro</h2>
+  <div class="grid-3">
+    <div class="card">
+      <p class="eyebrow">Promemoria</p><h3>Il prossimo controllo</h3>
+      <p>Scegli ogni quanto vuoi essere richiamato e l'app conta i giorni. Quando è il momento te lo dice, senza che tu debba ricordartelo a fine giornata.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Esercizi</p><h3>Per la zona che senti</h3>
+      <p>Schiena, cervicale, spalla, anca, gambe, mandibola: tocchi la zona e trovi esercizi di prevenzione da fare a casa, spiegati passo per passo.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Ogni giorno</p><h3>Consiglio e micro-abitudine</h3>
+      <p>Una cosa sola al giorno, piccola abbastanza da farla davvero. Chi tiene la serie per sette giorni sblocca le routine complete.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Diario</p><h3>Come sta il tuo corpo</h3>
+      <p>Un tocco al giorno da 0 a 10. Ne esce un grafico che mi mostri in studio: è il modo più onesto di capire se stiamo andando nella direzione giusta.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Test</p><h3>Quanto è pronto il tuo corpo</h3>
+      <p>Cinque mini-prove da fare in casa in due minuti, un punteggio e un piano della settimana che si aggiorna quando rifai il test.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Studio</p><h3>Prenotazione e buoni</h3>
+      <p>Il calendario, i trattamenti con i prezzi, le idee regalo e i buoni che si sbloccano usando l'app. Da mostrare direttamente in studio.</p>
+    </div>
+  </div>
+  <p class="note">Gli esercizi dell'app sono di prevenzione generale e non sostituiscono una valutazione. In caso di dolore acuto o persistente sospendi e <a href="contatti.html">scrivimi</a>.</p>
+</div></section>
+
+<section class="section alt"><div class="wrap split">
+  <div>
+    <h2>Non si scarica: si aggiunge</h2>
+    <p>Non la trovi su App Store o Play Store, e non serve. È una web app: si apre da un link, e se vuoi la metti sulla schermata Home con l'icona dello studio. Da lì si comporta come qualsiasi altra app — si apre a schermo intero e continua a funzionare anche senza connessione.</p>
+    <p>Non chiede registrazione e non raccoglie i tuoi dati: quello che segni — il diario, le abitudini, il promemoria — resta sul tuo telefono.</p>
+    <p class="btn-row"><a class="btn" href="{SITE['app']}" target="_blank" rel="noopener">Apri l'app</a></p>
+  </div>
+  <div class="card">
+    <p class="eyebrow">Come metterla sulla Home</p>
+    <ol class="steps">
+      <li><strong>Apri l'app</strong> dal pulsante qui accanto</li>
+      <li><strong>iPhone:</strong> tocca Condividi, poi "Aggiungi a Home"</li>
+      <li><strong>Android:</strong> menu ⋮, poi "Installa app"</li>
+      <li><strong>Attiva le notifiche</strong> se vuoi il promemoria del check-up</li>
+    </ol>
+    <p class="small">Dentro l'app trovi anche un pulsante "Installa" che fa la stessa cosa in un tocco.</p>
+  </div>
+</div></section>
+{cta_block(title="L'app accompagna, la valutazione capisce", text="Un esercizio aiuta, ma non dice il perché. Se un fastidio torna sempre, il posto giusto per cercarlo è lo studio.")}
+"""
+    write('app.html', layout("L'app dello Studio — Kinesiologia Studio Modena", "L'app gratuita dello Studio: promemoria del check-up, esercizi di prevenzione per zona, consiglio del giorno e diario del corpo. Si aggiunge alla schermata Home e funziona offline.", body, canonical='app.html'))
+
     # PRIVACY
     body = f"""<section class="page-head"><div class="wrap narrow"><p class="eyebrow">Informativa</p><h1>Privacy e cookie</h1></div></section>
 <section class="section"><div class="wrap narrow prose">{paras(PAGES['privacy'])}</div></section>"""
@@ -456,7 +566,7 @@ def build():
     # 404 + sitemap + robots
     body = """<section class="page-head"><div class="wrap narrow"><h1>Pagina non trovata</h1><p class="lead">Il sito è stato rinnovato e alcuni vecchi indirizzi non esistono più. Prova dalla <a href="/index.html">home</a> o dal <a href="/blog/index.html">blog</a>.</p></div></section>"""
     write('404.html', layout('Pagina non trovata — Kinesiologia Studio', 'Pagina non trovata', body, canonical='404.html'))
-    urls = ['', 'prima-valutazione.html', 'trattamenti.html', 'chi-sono.html', 'contatti.html', 'regala.html', 'blog/index.html'] + \
+    urls = ['', 'prima-valutazione.html', 'trattamenti.html', 'chi-sono.html', 'contatti.html', 'regala.html', 'app.html', 'blog/index.html'] + \
            ['problemi/%s.html' % p['slug'] for p in PROBLEMI] + [a['url'] for a in arts]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
          ''.join('  <url><loc>%s/%s</loc></url>\n' % (SITE['url'], u) for u in urls) + '</urlset>\n'

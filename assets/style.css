@@ -45,7 +45,7 @@ em{font-style:italic}
 .nav a.cta:hover{background:var(--brand-strong)}
 .nav-toggle{display:none;background:none;border:0;width:44px;height:44px;padding:8px;cursor:pointer}
 .nav-toggle span{display:block;height:2px;background:var(--ink);margin:6px 0;border-radius:2px;transition:.2s}
-@media(max-width:900px){
+@media(max-width:1100px){
   .nav-toggle{display:block}
   .nav{display:none;position:absolute;left:0;right:0;top:68px;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 22px 16px}
   .nav.open{display:block}
@@ -91,6 +91,9 @@ em{font-style:italic}
 @media(max-width:900px){.grid-3,.grid-4{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.grid-3,.grid-4,.split{grid-template-columns:1fr}.section{padding:40px 0}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.ticks{list-style:none;margin:1.1em 0;padding:0}
+.ticks li{position:relative;padding-left:1.7em;margin:.55em 0}
+.ticks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:700}
 .card h3{margin-top:.2em}
 .card .btn{margin-top:.4em}
 .prob-card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;transition:.15s}

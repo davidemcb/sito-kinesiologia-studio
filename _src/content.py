@@ -12,7 +12,7 @@ SITE = {
     'brevo_action': '#',   # <- URL del form Brevo (da inserire quando l'account è pronto)
     'piva': 'P.IVA 02887890362 · C.F. SCDDVD81D23B819L',
     'nav': [('La prima valutazione', 'prima-valutazione.html'), ('Problemi', 'problemi/mal-di-schiena.html'),
-            ('Trattamenti', 'trattamenti.html'), ('Blog', 'blog/index.html'), ('Chi sono', 'chi-sono.html'),
+            ('Trattamenti', 'trattamenti.html'), ('Blog', 'blog/index.html'), ('App', 'app.html'), ('Chi sono', 'chi-sono.html'),
             ('Regala', 'regala.html'), ('Prenota', 'contatti.html')],
 }
 
