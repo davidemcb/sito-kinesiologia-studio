@@ -121,7 +121,8 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
     <div>
       <p><strong>Orari</strong><br>Lunedì–Venerdì 9:00–20:00<br>Sabato 9:00–15:00</p>
       <p><a class="btn btn-sm" href="{SITE['calendly']}" target="_blank" rel="noopener">Prenota online</a>
-      <a class="btn btn-sm btn-ghost" href="{SITE['whatsapp']}" target="_blank" rel="noopener">WhatsApp</a></p>
+      <a class="btn btn-sm btn-ghost" href="{SITE['whatsapp']}" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-sm btn-ghost" href="{SITE['app']}" target="_blank" rel="noopener">Apri l'app</a></p>
     </div>
     <div>
       <p><strong>Esplora</strong></p>
@@ -164,6 +165,20 @@ def newsletter_block(depth=0):
     </form>
   </div>
 </section>"""
+
+def app_strip(depth=0):
+    p = '../' * depth
+    return f"""
+<section class="app-strip"><div class="wrap app-strip-inner">
+  <div>
+    <p class="eyebrow">L'app dello Studio</p>
+    <p>Promemoria del check-up, esercizi di prevenzione per la tua zona e diario del corpo. Gratis, si aggiunge alla schermata Home e funziona anche offline.</p>
+  </div>
+  <p class="btn-row">
+    <a class="btn btn-sm" href="{SITE['app']}" target="_blank" rel="noopener">Apri l'app</a>
+    <a class="btn btn-sm btn-ghost" href="{p}app.html">Cosa c'è dentro</a>
+  </p>
+</div></section>"""
 
 def cta_block(depth=0, title="Hai un fastidio che torna sempre?", text="La prima valutazione serve esattamente a questo: capire da dove parte, prima di decidere cosa fare."):
     p = '../' * depth
@@ -219,6 +234,7 @@ def build():
         <a class="btn btn-ghost" href="prima-valutazione.html">Come funziona</a>
       </p>
       <p class="proof">★★★★★ <strong>5,0 su Google</strong> · 128 recensioni · <a href="{SITE['google_reviews']}" target="_blank" rel="noopener">leggile tutte</a></p>
+      <p class="small">Tra una seduta e l'altra c'è <a href="app.html">l'app dello Studio</a>: promemoria del check-up ed esercizi per la tua zona.</p>
     </div>
     <div class="hero-card">
       <p class="eyebrow">Il metodo, in una riga</p>
@@ -259,26 +275,7 @@ def build():
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow">Le parole di chi è passato di qui</p>
-    <h2>Esperienze individuali, non promesse</h2>
-    <p class="intro">Ogni caso è diverso e nessuna recensione garantisce lo stesso risultato a un'altra persona. Le riporto perché raccontano, meglio di me, cosa cambia quando prima si capisce e poi si interviene.</p>
-    {review_cards(RECENSIONI[:3])}
-    <p class="center"><a class="btn btn-ghost" href="{SITE['google_reviews']}" target="_blank" rel="noopener">Tutte le 128 recensioni su Google</a></p>
-  </div>
-</section>
-
-<section class="section alt">
-  <div class="wrap">
-    <p class="eyebrow">Dal blog</p>
-    <h2>Capire il proprio corpo</h2>
-    <div class="grid-3">{''.join(article_card(a) for a in arts[:3])}</div>
-    <p class="center"><a class="more" href="blog/index.html">Tutti gli articoli →</a></p>
-  </div>
-</section>
-
-<section class="section" id="app">
+<section class="app-band" id="app">
   <div class="wrap split">
     <div>
       <p class="eyebrow">Gratis, per chi viene in studio</p>
@@ -299,6 +296,25 @@ def build():
       <p class="big-quote">Si apre da un link e la aggiungi alla schermata <em>Home</em>: da lì funziona come un'app, anche offline.</p>
       <p class="small" style="color:#B9C4BD">Quello che segni resta sul tuo telefono.</p>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Le parole di chi è passato di qui</p>
+    <h2>Esperienze individuali, non promesse</h2>
+    <p class="intro">Ogni caso è diverso e nessuna recensione garantisce lo stesso risultato a un'altra persona. Le riporto perché raccontano, meglio di me, cosa cambia quando prima si capisce e poi si interviene.</p>
+    {review_cards(RECENSIONI[:3])}
+    <p class="center"><a class="btn btn-ghost" href="{SITE['google_reviews']}" target="_blank" rel="noopener">Tutte le 128 recensioni su Google</a></p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <p class="eyebrow">Dal blog</p>
+    <h2>Capire il proprio corpo</h2>
+    <div class="grid-3">{''.join(article_card(a) for a in arts[:3])}</div>
+    <p class="center"><a class="more" href="blog/index.html">Tutti gli articoli →</a></p>
   </div>
 </section>
 {newsletter_block()}
@@ -327,6 +343,7 @@ def build():
     <div class="card"><p class="eyebrow">Dove</p><p class="big">Via Capilupi 21</p><p>Modena, zona direzionale Toscanini. Suonare a "Studio Olistico".</p></div>
   </div>
 </div></section>
+{app_strip()}
 {cta_block(title="Prenota la prima valutazione", text="Scegli giorno e ora online: ricevi subito la conferma via email con un promemoria prima dell'appuntamento.")}
 """
     write('prima-valutazione.html', layout(pv['title'] + ' — Kinesiologia Studio Modena', pv['lead'], body, canonical='prima-valutazione.html'))
@@ -346,6 +363,7 @@ def build():
   <div class="card warn"><p class="eyebrow">Quando non sono io la persona giusta</p>{paras(pr['red_flags'])}</div>
 </div></section>
 {rel_html}
+{app_strip(1)}
 {cta_block(1)}
 """
         write('problemi/%s.html' % pr['slug'], layout(pr['title'] + ' a Modena — Kinesiologia Studio', pr['lead'], body, depth=1, canonical='problemi/%s.html' % pr['slug']))
@@ -366,6 +384,7 @@ def build():
   <p class="note">{esc(TRATTAMENTI['nota'])}</p>
 </div></section>
 <section class="section alt"><div class="wrap prose">{paras(TRATTAMENTI['testo'])}</div></section>
+{app_strip()}
 {cta_block()}
 """
     write('trattamenti.html', layout('Trattamenti e prezzi — Kinesiologia Studio Modena', 'Prezzi trasparenti: prima valutazione, trattamento da 60 e 30 minuti, percorsi. Ogni seduta comprende valutazione, test, intervento ed esercizi.', body, canonical='trattamenti.html'))
@@ -378,6 +397,7 @@ def build():
   <div class="portrait"><img src="assets/davide.jpg" alt="Davide Scuderi nello studio di Modena" loading="lazy"></div>
 </div></section>
 <section class="section"><div class="wrap prose">{paras(cs['body'])}</div></section>
+{app_strip()}
 {cta_block()}
 """
     write('chi-sono.html', layout('Chi sono — Davide Scuderi, massoterapista e chinesiologo a Modena', cs['lead'], body, canonical='chi-sono.html'))
@@ -440,6 +460,7 @@ def build():
     {pn}
   </div>
 </article>
+{app_strip(1)}
 {cta_block(1, title="Ti riconosci in questa descrizione?", text="Alla prima valutazione guardiamo insieme da dove arriva, prima di decidere cosa fare.")}
 {newsletter_block(1)}
 """
@@ -454,6 +475,7 @@ def build():
 </div></section>
 <section class="section"><div class="wrap"><div class="grid-3">{gifts}</div>
 <p class="note">Il pagamento avviene su SumUp, in modo sicuro. Dopo il pagamento riceverai il voucher via email; se hai dubbi scrivimi su <a href="{SITE['whatsapp']}" target="_blank" rel="noopener">WhatsApp</a>.</p></div></section>
+{app_strip()}
 """
     write('regala.html', layout('Regala un trattamento — Kinesiologia Studio Modena', 'Voucher regalo: trattamento da 30 o 60 minuti, percorsi e un anno di prevenzione. Pagamento online, voucher subito.', body, canonical='regala.html'))
 

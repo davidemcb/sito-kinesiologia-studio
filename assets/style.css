@@ -94,6 +94,15 @@ em{font-style:italic}
 .ticks{list-style:none;margin:1.1em 0;padding:0}
 .ticks li{position:relative;padding-left:1.7em;margin:.55em 0}
 .ticks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:700}
+
+/* app dello studio */
+.app-band{background:var(--brand-soft);border-top:1px solid #CFE0D6;border-bottom:1px solid #CFE0D6;padding:56px 0}
+.app-strip{background:var(--brand-soft);border-top:1px solid #CFE0D6;border-bottom:1px solid #CFE0D6;padding:24px 0}
+.app-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:16px 30px;flex-wrap:wrap}
+.app-strip p{margin:0;max-width:62ch}
+.app-strip .eyebrow{margin:0 0 .3em}
+.app-strip .btn-row{margin:0}
+@media(max-width:640px){.app-band{padding:40px 0}}
 .card h3{margin-top:.2em}
 .card .btn{margin-top:.4em}
 .prob-card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;transition:.15s}
