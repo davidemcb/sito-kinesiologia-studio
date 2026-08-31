@@ -2,8 +2,8 @@
 // Tracks "Chiama" (call) and "Prenota" (booking) conversions
 
 const conversionLabels = {
-  'chiama': 'AW-969285863/z5vqCJaQ6eocEOfBmM4D',
-  'prenota': 'AW-969285863/o_dQCJmQ6eocEOfBmM4D'
+  'chiama': 'AW-969285863/HL7pCIvAp-scEOfBmM4D',
+  'prenota': 'AW-969285863/zQe9CKf8nOscEOfBmM4D'
 };
 
 /**
