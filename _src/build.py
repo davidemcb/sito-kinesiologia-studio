@@ -145,27 +145,6 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
 </body>
 </html>"""
 
-def newsletter_block(depth=0):
-    return f"""
-<section class="newsletter" id="newsletter">
-  <div class="wrap nl-inner">
-    <div>
-      <p class="eyebrow">Ogni due settimane, via email</p>
-      <h2>Capire il proprio corpo, un articolo alla volta</h2>
-      <p>Gli stessi articoli che leggi qui e nell'app, con un criterio pratico in ogni puntata: cosa osservare, cosa provare a casa, quando è il momento di farsi vedere. Niente promozioni a raffica: puoi cancellarti con un clic.</p>
-    </div>
-    <form class="nl-form" action="{SITE['brevo_action']}" method="POST" target="_blank" data-nl>
-      <label>Nome <input type="text" name="FIRSTNAME" autocomplete="given-name" required></label>
-      <label>Email <input type="email" name="EMAIL" autocomplete="email" required></label>
-      <label class="check"><input type="checkbox" name="OPT_IN" value="1" required> <span>Acconsento a ricevere via email contenuti informativi e comunicazioni dello Studio. Ho letto l'<a href="{'../'*depth}privacy.html">informativa privacy</a>. Posso revocare il consenso in ogni momento.</span></label>
-      <input type="hidden" name="email_address_check" value="" class="hp">
-      <input type="hidden" name="locale" value="it">
-      <button class="btn" type="submit">Iscrivimi</button>
-      <p class="nl-note" data-nl-note hidden>Grazie! Controlla la posta: ti abbiamo mandato un'email per confermare l'iscrizione.</p>
-    </form>
-  </div>
-</section>"""
-
 def app_strip(depth=0):
     p = '../' * depth
     return f"""
@@ -317,7 +296,6 @@ def build():
     <p class="center"><a class="more" href="blog/index.html">Tutti gli articoli →</a></p>
   </div>
 </section>
-{newsletter_block()}
 {cta_block()}
 """
     write('index.html', layout(SITE['name'] + ' — Massoterapista e chinesiologo a Modena', 'Schiena, cervicale, spalla, postura: prima di trattare, bisogna capire. Valutazione, ragionamento e intervento scelto sul tuo caso. Dott. Davide Scuderi, Modena.', home, canonical=''))
@@ -408,7 +386,7 @@ def build():
     body = f"""
 <section class="page-head"><div class="wrap">
   <p class="eyebrow">Blog</p><h1>Capire il proprio corpo</h1>
-  <p class="lead">Articoli brevi, scritti per chi ha un fastidio e vuole capirlo prima di curarlo. Gli stessi che trovi nell'app dello Studio e nella newsletter.</p>
+  <p class="lead">Articoli brevi, scritti per chi ha un fastidio e vuole capirlo prima di curarlo. Gli stessi che trovi nell'app dello Studio, insieme agli esercizi per la tua zona.</p>
 </div></section>
 <section class="section"><div class="wrap">
   <div class="grid-3">{cards}</div>
@@ -432,7 +410,6 @@ def build():
     </ol>
   </div>
 </div></section>
-{newsletter_block(1)}
 """
     write('blog/index.html', layout('Blog — Kinesiologia Studio', 'Articoli per capire schiena, cervicale, spalla, postura e dolore: cosa osservare, cosa provare, quando farsi vedere.', body, depth=1, canonical='blog/index.html'))
 
@@ -462,7 +439,6 @@ def build():
 </article>
 {app_strip(1)}
 {cta_block(1, title="Ti riconosci in questa descrizione?", text="Alla prima valutazione guardiamo insieme da dove arriva, prima di decidere cosa fare.")}
-{newsletter_block(1)}
 """
         write(a['url'], layout(a['title'] + ' — Kinesiologia Studio', a['excerpt'], body, depth=1, canonical=a['url'], og_type='article'))
 
@@ -595,7 +571,7 @@ def build():
     open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8').write(sm)
     open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n' % SITE['url'])
 
-    # newsletter export (per Brevo / app): JSON degli articoli
+    # export degli articoli in JSON (per l'app)
     json.dump([{k: a[k] for k in ('title', 'date', 'topic', 'text', 'url')} for a in arts],
               open(os.path.join(OUT, 'articoli.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('OK: %d pagine, %d articoli' % (len(urls), len(arts)))

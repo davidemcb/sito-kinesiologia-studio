@@ -9,7 +9,6 @@ SITE = {
     'whatsapp': 'https://wa.me/393481514382?text=Ciao%20Davide%2C%20ti%20scrivo%20dal%20sito%3A%20',
     'google_reviews': 'https://www.google.com/maps/search/?api=1&query=Kinesiologia+Studio+Modena+Via+Capilupi',
     'app': 'https://davidemcb.github.io/kinesiologia-studio/',
-    'brevo_action': '#',   # <- URL del form Brevo (da inserire quando l'account è pronto)
     'piva': 'P.IVA 02887890362 · C.F. SCDDVD81D23B819L',
     'nav': [('La prima valutazione', 'prima-valutazione.html'), ('Problemi', 'problemi/mal-di-schiena.html'),
             ('Trattamenti', 'trattamenti.html'), ('Blog', 'blog/index.html'), ('App', 'app.html'), ('Chi sono', 'chi-sono.html'),
@@ -128,10 +127,9 @@ Il Titolare si riserva di nominare quale Responsabile del trattamento dei dati p
 
 ### Finalità del trattamento
 
-I dati personali degli Utenti del Sito Web saranno oggetto di trattamento nei modi e nelle forme prescritti dal GDPR, per lo svolgimento delle funzionalità proprie del Sito Web, con particolare riferimento alle procedure di raccolta dati, contatto, prenotazione e iscrizione alla newsletter. In particolare, i dati personali forniti al Titolare verranno trattati per le seguenti finalità:
+I dati personali degli Utenti del Sito Web saranno oggetto di trattamento nei modi e nelle forme prescritti dal GDPR, per lo svolgimento delle funzionalità proprie del Sito Web, con particolare riferimento alle procedure di raccolta dati, contatto e prenotazione. In particolare, i dati personali forniti al Titolare verranno trattati per le seguenti finalità:
 
 - per dar seguito alle specifiche richieste rivolte al Titolare dall'Utente per il tramite del Sito Web e dei suoi strumenti di comunicazione (email, WhatsApp, telefono e simili);
-- per l'eventuale iscrizione alla newsletter e il conseguente invio di comunicazioni informative e commerciali concernenti il settore nel quale opera il Titolare, con apposito consenso prestato dall'Utente; il servizio di invio è gestito tramite la piattaforma Brevo (server nell'Unione Europea), che agisce come responsabile del trattamento;
 - per la prenotazione online degli appuntamenti tramite Calendly, che riceve nome, email e telefono al solo fine di fissare l'appuntamento e inviare conferma e promemoria;
 - per comunicazioni di natura informativa relative ai servizi dello stesso Titolare, a seguito della richiesta di informazioni;
 - per altre finalità accessorie o collegate a quelle sopra indicate e comunque rientranti nell'ambito delle attività del Sito Web.
@@ -144,11 +142,11 @@ Il trattamento dei dati personali si fonda sul diritto di informazione, sull'ade
 
 ### Obbligatorietà del conferimento
 
-Il conferimento dei dati richiesti nei moduli (nome, email) è necessario per erogare il servizio richiesto (iscrizione alla newsletter, prenotazione, risposta a una richiesta). Il conferimento di tutti gli altri dati è facoltativo.
+Il conferimento dei dati richiesti nei moduli (nome, email) è necessario per erogare il servizio richiesto (prenotazione, risposta a una richiesta). Il conferimento di tutti gli altri dati è facoltativo.
 
 ### Eventuali destinatari dei dati personali
 
-I dati potranno essere comunicati a consulenti o a soggetti terzi che operano, anche in nome e per conto del Titolare, per l'evasione delle prestazioni connesse alle finalità indicate nella presente informativa (in particolare Brevo per la newsletter e Calendly per le prenotazioni, quest'ultima con garanzie di trasferimento ai sensi del GDPR). Il sito è ospitato su GitHub Pages (GitHub, Inc.), che può registrare l'indirizzo IP del visitatore nei log del server per motivi di sicurezza.
+I dati potranno essere comunicati a consulenti o a soggetti terzi che operano, anche in nome e per conto del Titolare, per l'evasione delle prestazioni connesse alle finalità indicate nella presente informativa (in particolare Calendly per le prenotazioni, con garanzie di trasferimento ai sensi del GDPR). Il sito è ospitato su GitHub Pages (GitHub, Inc.), che può registrare l'indirizzo IP del visitatore nei log del server per motivi di sicurezza.
 
 ### Periodo di conservazione
 
@@ -160,7 +158,7 @@ Ciascun Interessato ha diritto di accesso, di rettifica, di cancellazione (oblio
 
 ### Diritto di revoca del consenso
 
-È possibile revocare il consenso in qualsiasi momento tramite: invio di una email all'indirizzo del Titolare, infokinesiologia@gmail.com; il link di disiscrizione presente in ogni newsletter; comunicazione espressa presso la sede del Titolare.
+È possibile revocare il consenso in qualsiasi momento tramite: invio di una email all'indirizzo del Titolare, infokinesiologia@gmail.com; comunicazione espressa presso la sede del Titolare.
 
 ### Reclami
 
@@ -184,7 +182,7 @@ Questo sito utilizza due sole categorie di cookies propri, descritte di seguito.
 
 **Cookies di marketing (Google Ads).** Solo se l'utente acconsente tramite il banner viene caricato il tag di Google Ads (Google Ireland Limited), che può installare cookies per misurare le conversioni delle campagne pubblicitarie del Titolare (ad esempio i clic sui pulsanti "Chiama" e "Prenota"), con indirizzo IP anonimizzato. Senza consenso il tag non viene caricato e nessun cookie di marketing viene installato. La scelta può essere revocata in qualsiasi momento eliminando i cookies dal browser: alla visita successiva il banner verrà riproposto. Per maggiori informazioni si rinvia all'informativa di Google: policies.google.com/privacy.
 
-I caratteri tipografici sono caricati da Google Fonts. I servizi esterni raggiungibili tramite link o pulsanti — Calendly per la prenotazione, WhatsApp, SumUp per i pagamenti dei voucher, Google Maps, Brevo per la newsletter — possono installare propri cookies sulle rispettive pagine, in qualità di autonomi titolari: si rinvia alle loro informative.
+I caratteri tipografici sono caricati da Google Fonts. I servizi esterni raggiungibili tramite link o pulsanti — Calendly per la prenotazione, WhatsApp, SumUp per i pagamenti dei voucher, Google Maps — possono installare propri cookies sulle rispettive pagine, in qualità di autonomi titolari: si rinvia alle loro informative.
 
 ### Come controllare o eliminare i cookies
 

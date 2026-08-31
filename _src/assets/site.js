@@ -7,9 +7,4 @@
       if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){b.textContent='Link copiato';});}
     });
   });
-  var f=document.querySelector('[data-nl]');
-  if(f){f.addEventListener('submit',function(e){
-    if(f.getAttribute('action')==='#'){e.preventDefault();var note=f.querySelector('[data-nl-note]');if(note){note.hidden=false;note.textContent='Il modulo sarà attivo appena colleghiamo Brevo.';}return;}
-    var note=f.querySelector('[data-nl-note]');if(note)note.hidden=false;
-  });}
 })();

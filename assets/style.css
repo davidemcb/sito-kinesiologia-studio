@@ -153,24 +153,6 @@ em{font-style:italic}
 .post-nav a{text-decoration:none;max-width:48%}
 .post-nav .right{text-align:right;margin-left:auto}
 
-/* newsletter */
-.newsletter{background:var(--brand-ink);color:#E8ECE6;padding:56px 0}
-.nl-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
-@media(max-width:820px){.nl-inner{grid-template-columns:1fr}}
-.newsletter h2{color:#fff}
-.newsletter .eyebrow{color:#DFA24C}
-.newsletter p{color:#B9C4BD}
-.nl-form{background:#1D2521;border:1px solid #2E3833;border-radius:var(--radius);padding:24px;display:grid;gap:14px}
-.nl-form label{display:grid;gap:6px;font-size:.92rem;color:#E8ECE6}
-.nl-form input[type=text],.nl-form input[type=email]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #3a463f;background:#141A17;color:#fff;font:inherit}
-.nl-form .check{grid-template-columns:auto 1fr;align-items:start;gap:10px;font-size:.82rem;color:#B9C4BD}
-.nl-form .check input{margin-top:4px}
-.nl-form .check a{color:#DFA24C}
-.nl-form .btn{border-color:var(--accent);background:var(--accent);color:var(--accent-ink);justify-self:start}
-.nl-form .btn:hover{background:#DFA24C;border-color:#DFA24C}
-.nl-note{color:#93C4B4 !important;font-size:.92rem}
-.hp{position:absolute;left:-9999px}
-
 /* cta band */
 .cta-band{background:var(--brand);color:#fff;padding:56px 0;text-align:center}
 .cta-band h2{color:#fff}
