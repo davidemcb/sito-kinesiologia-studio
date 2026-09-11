@@ -20,7 +20,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 
-    <script src="assets/cookie-consent.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Vai al contenuto</a>
@@ -45,7 +44,7 @@
 <section class="section"><div class="wrap grid-4 contact-grid">
   <div class="card"><p class="eyebrow">Prenota online</p><h3>Calendario</h3><p>Scegli giorno e ora, ricevi conferma via email e un promemoria prima dell'appuntamento.</p><a class="btn" href="https://calendly.com/infokinesiologia/consulenza" target="_blank" rel="noopener">Apri il calendario</a></div>
   <div class="card"><p class="eyebrow">Scrivimi</p><h3>WhatsApp</h3><p>Per una domanda prima di prenotare, o per un orario che non trovi nel calendario.</p><a class="btn btn-ghost" href="https://wa.me/393481514382?text=Ciao%20Davide%2C%20ti%20scrivo%20dal%20sito%3A%20" target="_blank" rel="noopener">Apri WhatsApp</a></div>
-  <div class="card"><p class="eyebrow">Chiama</p><h3>348 151 4382</h3><p>Se sono in seduta non rispondo: lascia un messaggio, ti richiamo appena posso.</p><a class="btn btn-ghost" href="tel:+393481514382" onclick="trackConversion('chiama'); return true;">Chiama ora</a></div>
+  <div class="card"><p class="eyebrow">Chiama</p><h3>348 151 4382</h3><p>Se sono in seduta non rispondo: lascia un messaggio, ti richiamo appena posso.</p><a class="btn btn-ghost" href="tel:+393481514382">Chiama ora</a></div>
   <div class="card"><p class="eyebrow">Prevenzione</p><h3>L'app dello Studio</h3><p>Promemoria del check-up, esercizi per la tua zona e diario del corpo. Gratis, si aggiunge alla schermata Home.</p><a class="btn btn-ghost" href="app.html">Scopri l'app</a></div>
 </div></section>
 <section class="section media-band"><div class="wrap"><figure class="photo"><img src="assets/contatti.jpg" alt="Colloquio iniziale nello studio di Via Capilupi 21 a Modena" loading="lazy"></figure></div></section>
@@ -79,7 +78,7 @@
     </div>
     <div>
       <p><strong>Orari</strong><br>Lunedì–Venerdì 9:00–20:00<br>Sabato 9:00–15:00</p>
-      <p><a class="btn btn-sm" href="https://calendly.com/infokinesiologia/consulenza" target="_blank" rel="noopener" onclick="trackConversion('prenota');">Prenota online</a>
+      <p><a class="btn btn-sm" href="https://calendly.com/infokinesiologia/consulenza" target="_blank" rel="noopener">Prenota online</a>
       <a class="btn btn-sm btn-ghost" href="https://wa.me/393481514382?text=Ciao%20Davide%2C%20ti%20scrivo%20dal%20sito%3A%20" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn btn-sm btn-ghost" href="https://davidemcb.github.io/kinesiologia-studio/" target="_blank" rel="noopener">Apri l'app</a></p>
     </div>
@@ -101,6 +100,23 @@
   </div>
 </footer>
 <script src="assets/site.js"></script>
-    <script src="assets/conversion-events.js"></script>
+<script src="assets/conversion-events.js"></script>
+<script>
+(function () {
+  try {
+    var pagina = location.pathname.replace(/^\/|\.html$/g, '') || 'home';
+    fetch('https://firestore.googleapis.com/v1/projects/kinesiologia-studio/databases/(default)/documents/events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields: {
+        t:   { stringValue: 'sito_lettura' },
+        d:   { stringValue: pagina.slice(0, 79) },
+        did: { stringValue: 'sito' },
+        day: { stringValue: new Date().toISOString().slice(0, 10) }
+      }})
+    }).catch(function () {});
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>

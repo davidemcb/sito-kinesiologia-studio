@@ -67,6 +67,36 @@ def fmt_date(iso):
     return '%d %s %d' % (d.day, mesi[d.month-1], d.year)
 
 # ---------- layout ----------
+def conteggio_letture():
+    """Conta quante volte viene aperta ogni pagina.
+
+    Volutamente anonimo: manda solo il nome della pagina e la data, nessun
+    identificativo della persona, nessun cookie, niente localStorage. Non
+    distingue i visitatori: dice quante letture ha avuto un articolo, non chi.
+    Per questo non richiede banner di consenso.
+
+    I numeri finiscono nella stessa raccolta 'events' dell'app e si leggono
+    da davidemcb.github.io/kinesiologia-studio/stats.html
+    """
+    return """<script>
+(function () {
+  try {
+    var pagina = location.pathname.replace(/^\\/|\\.html$/g, '') || 'home';
+    fetch('https://firestore.googleapis.com/v1/projects/kinesiologia-studio/databases/(default)/documents/events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields: {
+        t:   { stringValue: 'sito_lettura' },
+        d:   { stringValue: pagina.slice(0, 79) },
+        did: { stringValue: 'sito' },
+        day: { stringValue: new Date().toISOString().slice(0, 10) }
+      }})
+    }).catch(function () {});
+  } catch (e) {}
+})();
+</script>"""
+
+
 def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_head=''):
     p = '../' * depth
     nav = ''.join('<li><a href="%s%s"%s>%s</a></li>' % (p, h, ' class="cta"' if h == 'contatti.html' else '', t)
@@ -142,6 +172,8 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
   </div>
 </footer>
 <script src="{p}assets/site.js"></script>
+<script src="{p}assets/conversion-events.js"></script>
+{conteggio_letture()}
 </body>
 </html>"""
 
