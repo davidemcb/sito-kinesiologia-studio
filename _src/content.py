@@ -68,7 +68,7 @@ PAGES = {
  'valutazione': {
     'eyebrow': 'La prima valutazione',
     'title': 'Cosa succede alla prima valutazione',
-    'lead': "Sessanta minuti in cui la domanda non è «dove fa male?» ma «perché fa male proprio lì, proprio a te?». Ecco cosa faccio, in ordine, e cosa porti a casa.",
+    'lead': "Sessanta minuti in cui la domanda non è «dove fa male?» ma «perché fa male proprio lì, proprio a te?». Niente pacchetti: quante volte ci vediamo lo decidono i test, non io. Ecco cosa faccio, in ordine, e cosa porti a casa.",
     'body': """## 1. Ascolto — la storia, non solo il sintomo
 
 I primi minuti sono tuoi. Da quanto tempo, com'è cominciato, cosa lo peggiora e cosa lo calma, cosa hai già provato, cosa non riesci più a fare. Ti chiedo anche cose che sembrano lontane: un intervento di dieci anni fa, una caviglia che «ormai non fa più male», come dormi, quante ore stai seduto. Non fa male non vuol dire che lavora bene.
