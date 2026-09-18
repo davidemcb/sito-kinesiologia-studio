@@ -107,7 +107,7 @@ Tre cose in cui credo, e che ritrovi in ogni seduta. Che nessun terapista ripara
 
 Il mio percorso parte da lontano e tiene insieme corpo e persona. Sono naturopata dal 2003, diplomato presso l'Istituto di Medicina Psicosomatica Riza, con due master: uno in lettura del corpo in bioenergetica e uno in kinesiologia applicata. Mi sono poi laureato in Scienze Motorie e ho conseguito un master universitario di primo livello in psicologia delle organizzazioni. Sono massoterapista M.C.B. (massaggiatore e capo bagnino degli stabilimenti idroterapici), il titolo che in Italia abilita alla massoterapia.
 
-Sono autore di «Vestirsi di Sé — manuale di automassaggio consapevole», e scrivo regolarmente articoli per i miei pazienti, che trovi nel blog e nell'app dello Studio. Preferisco un paziente che ha capito a un paziente che dipende da me.
+Sono autore di «Vestirsi di Sé — manuale di automassaggio consapevole», e scrivo regolarmente articoli per i miei pazienti, che trovi nel blog e nell'app dello Studio. Scrivo per una ragione precisa. Un paziente che ha capito da dove viene il suo problema sa cosa fare da solo, e torna quando serve; uno che dipende da me torna sempre, e non è un buon segno. Preferisco il primo.
 
 Lo studio è in Via Capilupi 21 a Modena, zona direzionale Toscanini. Se vuoi capire se il tuo caso fa per me, scrivimi: ti rispondo io.""",
  },
