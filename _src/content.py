@@ -99,7 +99,7 @@ Abbigliamento comodo, che permetta di vedere come ti muovi. Se hai esami recenti
     'lead': "Massoterapista e chinesiologo a Modena. Il mio lavoro non è fare più trattamenti: è rendere comprensibile perché un certo intervento abbia senso per te e per la tua situazione.",
     'body': """Ho aperto Kinesiologia Studio con un'idea semplice che nel tempo è diventata un metodo: prima di trattare, bisogna capire. Non è uno slogan. È il motivo per cui la prima ora la divido a metà, e la prima metà non prevede nessun trattamento.
 
-Nella pratica di tutti i giorni vedo soprattutto schiene, cervicali, spalle e posture che si sono adattate male a giornate lunghe e sedute. Ma la lista dei problemi conta meno del modo di guardarli: non un elenco di tecniche da applicare al sintomo, ma una valutazione da cui deriva l'intervento. Due persone con lo stesso dolore escono spesso con interventi diversi.
+Nella pratica di tutti i giorni vedo soprattutto schiene, cervicali e spalle di persone che passano la giornata sedute: corpi che si sono adattati a un lavoro per cui non sono fatti, e che a un certo punto hanno presentato il conto. Ma la lista dei problemi conta meno del modo di guardarli: non un elenco di tecniche da applicare al sintomo, ma una valutazione da cui deriva l'intervento. Due persone con lo stesso dolore escono spesso con interventi diversi.
 
 Tre cose in cui credo, e che ritrovi in ogni seduta. Che nessun terapista ripara un tessuto: lo ripara il corpo, e il mio lavoro è togliere i freni e dare lo stimolo giusto. Che il dolore non misura il danno, e spiegarlo è già parte del trattamento. Che a volte la risposta giusta è un esercizio, un consiglio, o «prima passa dal medico», e non una seduta in più.
 
