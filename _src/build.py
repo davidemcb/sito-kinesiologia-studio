@@ -271,7 +271,7 @@ def build():
     <div>
       <p class="eyebrow">Massoterapia e chinesiologia · Modena</p>
       <h1>Prima di trattare, <em>bisogna capire.</em></h1>
-      <p class="lead">Schiena, cervicale, spalla, postura: il dolore ti dice dove fa male, non perché. Alla prima valutazione cerchiamo il perché — e solo dopo decidiamo se, come e dove intervenire.</p>
+      <p class="lead">Schiena, cervicale, spalla, postura: il dolore ti dice dove fa male, non perché. Alla prima valutazione cerchiamo il perché — e solo dopo decidiamo se, come e dove intervenire. <strong>Lavoro perché tu non abbia più bisogno di me.</strong></p>
       <p class="btn-row">
         <a class="btn" href="{SITE['calendly']}" target="_blank" rel="noopener">Prenota la prima valutazione</a>
         <a class="btn btn-ghost" href="prima-valutazione.html">Come funziona</a>
@@ -349,6 +349,20 @@ def build():
     <p class="intro">Ogni caso è diverso e nessuna recensione garantisce lo stesso risultato a un'altra persona. Le riporto perché raccontano, meglio di me, cosa cambia quando prima si capisce e poi si interviene.</p>
     {review_cards(RECENSIONI[:3])}
     <p class="center"><a class="btn btn-ghost" href="{SITE['google_reviews']}" target="_blank" rel="noopener">Tutte le 128 recensioni su Google</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Quante sedute servono?</p>
+    <h2>Lavoro perché tu non abbia più bisogno di me</h2>
+    <p class="lead">Niente pacchetti, niente «ci vediamo ogni settimana»: capiamo da dove viene il problema, lo trattiamo, ti do quello che serve per non tornarci. Quante sedute servono lo dicono i test, non un programma deciso il primo giorno. Non è una promessa che faccio io: è quello che raccontano i pazienti.</p>
+    <div class="grid-3">
+      <blockquote class="card"><p>«Il dott. Davide mi ha trattata e ora riesco a fare tutti i movimenti e il dolore è quasi scomparso, e questo in una sola seduta.»</p><footer>Manuela P.</footer></blockquote>
+      <blockquote class="card"><p>«Una rigidità ai muscoli della catena posteriore che durava da anni. In una sola seduta ha cambiato drasticamente la mia situazione, ci fossi andato prima!»</p><footer>Angelo G.</footer></blockquote>
+      <blockquote class="card"><p>«Da più di un mese mi portavo avanti un forte dolore alla parte lombare. Davide è riuscito a sbloccarmi immediatamente: subito dopo mi sentivo veramente più libera e leggera.»</p><footer>Ilaria L.</footer></blockquote>
+    </div>
+    <p class="center small">Tre delle 33 recensioni, su 128, che parlano di un risultato in una o poche sedute. <a href="{SITE['google_reviews']}" target="_blank" rel="noopener">Leggile tutte su Google</a> · <a href="trattamenti.html">Quante sedute servono?</a></p>
   </div>
 </section>
 

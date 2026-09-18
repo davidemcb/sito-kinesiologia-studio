@@ -45,6 +45,10 @@ Nella stessa ora posso usare lavoro manuale sui tessuti, mobilizzazioni articola
 
 A volte la cosa più utile che posso fare in un'ora è non fare il trattamento. Succede quando i test indicano qualcosa che va visto prima da un medico, quando il dolore è appena comparso e ha bisogno di calma più che di mani, o quando la persona ha bisogno di un esercizio e non di una seduta. In quei casi lo dico. Un massoterapista che a volte non massaggia non è un paradosso: è uno che ha guardato prima di decidere.
 
+## Quante sedute servono?
+
+Non lo so prima di averti visto, e diffido di chi lo sa. So tre cose. Che lavoro perché tu non abbia più bisogno di me: niente pacchetti, niente «ci vediamo ogni settimana». Che quante sedute servono lo dicono i test, prima e dopo, non un programma deciso il primo giorno: se il collo che ruotava trenta gradi ne ruota cinquanta e la settimana dopo tiene, il lavoro è fatto. E che il risultato dura se fai la tua parte a casa, con gli esercizi che ti do — la seduta apre la porta, quelli ci passano attraverso. È il motivo per cui tanti pazienti, nelle recensioni, scrivono «in una seduta»: non è una promessa che faccio io, è quello che raccontano loro.
+
 ## Cosa comprende ogni seduta
 
 Ascolto e storia del problema; osservazione di come ti muovi; test muscolari e articolari; intervento scelto in base ai test; esercizi da portare a casa, pochi e spiegati; rivalutazione a fine seduta e all'incontro successivo, per misurare cosa è cambiato davvero e non solo come ti senti.""",
