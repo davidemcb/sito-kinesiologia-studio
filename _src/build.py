@@ -245,7 +245,7 @@ def review_cards(items):
 def article_card(a, depth=0):
     p = '../' * depth
     return f"""<article class="card post-card">
-  <p class="eyebrow">{esc(TOPIC_LABEL.get(a.get('topic',''), a.get('cat','')))} · {fmt_date(a['date'])}</p>
+  <p class="eyebrow">{esc(TOPIC_LABEL.get(a.get('topic',''), a.get('cat','')))}</p>
   <h3><a href="{p}{a['url']}">{esc(a['title'])}</a></h3>
   <p>{esc(a['excerpt'])}</p>
   <a class="more" href="{p}{a['url']}">Leggi l'articolo →</a>
@@ -492,7 +492,7 @@ def build():
         body = f"""
 <article class="post">
   <header class="page-head"><div class="wrap narrow">
-    <p class="eyebrow">{esc(TOPIC_LABEL.get(a.get('topic',''), a.get('cat','')))} · {fmt_date(a['date'])} · Davide Scuderi</p>
+    <p class="eyebrow">{esc(TOPIC_LABEL.get(a.get('topic',''), a.get('cat','')))} · Davide Scuderi</p>
     <h1>{esc(a['title'])}</h1>
   </div></header>
   <div class="wrap narrow prose">{paras(a['text'])}
