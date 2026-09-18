@@ -3,7 +3,7 @@
 Uso: python3 build.py  -> scrive i file HTML nella cartella ../sito-kinesiologia-studio (output).
 I contenuti stanno in content.py e negli articoli (articoli/*.json).
 """
-import json, os, re, html, shutil, datetime
+import json, os, re, html, shutil, datetime, urllib.request
 from content import SITE, PAGES, PROBLEMI, RECENSIONI, TRATTAMENTI, REGALI
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -56,6 +56,24 @@ def load_articles():
     arts = [a for a in arts if a['published']]
     arts.sort(key=lambda a: a['date'], reverse=True)
     return arts
+
+ANAT_URL = 'https://davidemcb.github.io/kinesiologia-studio/anatomia.json'
+
+def load_anatomia():
+    """Le voci di "Come funziona il corpo" sono le stesse dell'app: la fonte e'
+    anatomia.json nel repo dell'app. Si scarica a ogni build, tenendo una copia
+    locale come riserva se la rete non risponde."""
+    cache = os.path.join(ROOT, 'anatomia.json')
+    try:
+        raw = urllib.request.urlopen(ANAT_URL, timeout=15).read().decode('utf-8')
+        open(cache, 'w', encoding='utf-8').write(raw)
+    except Exception:
+        if not os.path.exists(cache): return []
+        raw = open(cache, encoding='utf-8').read()
+    voci = json.loads(raw)
+    for v in voci:
+        v['slug'] = slugify(v['title'])
+    return voci
 
 TOPIC_LABEL = {'schiena': 'Schiena', 'cervicale': 'Cervicale e testa', 'spalla': 'Spalla', 'postura': 'Postura',
                'piede': 'Piede e gamba', 'stress': 'Respiro e stress', 'mandibola': 'Mandibola', 'sport': 'Sport e allenamento',
@@ -161,6 +179,7 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
         <li><a href="{p}prima-valutazione.html">La prima valutazione</a></li>
         <li><a href="{p}trattamenti.html">Trattamenti e prezzi</a></li>
         <li><a href="{p}blog/index.html">Blog</a></li>
+        <li><a href="{p}corpo/index.html">Come funziona il corpo</a></li>
         <li><a href="{p}regala.html">Regala un trattamento</a></li>
         <li><a href="{p}app.html">L'app dello Studio</a></li>
         <li><a href="{p}privacy.html">Privacy e cookie</a></li>
@@ -431,7 +450,7 @@ def build():
     body = f"""
 <section class="page-head"><div class="wrap">
   <p class="eyebrow">Blog</p><h1>Capire il proprio corpo</h1>
-  <p class="lead">Articoli brevi, scritti per chi ha un fastidio e vuole capirlo prima di curarlo. Gli stessi che trovi nell'app dello Studio, insieme agli esercizi per la tua zona.</p>
+  <p class="lead">Articoli brevi, scritti per chi ha un fastidio e vuole capirlo prima di curarlo. Gli stessi che trovi nell'app dello Studio, insieme agli esercizi per la tua zona. Se vuoi partire dalle basi, c'è <a href="../corpo/index.html">Come funziona il corpo</a>: articolazioni, muscoli, tendini e catene cinetiche, con uno schema per ogni voce.</p>
 </div></section>
 <section class="section"><div class="wrap">
   <div class="grid-3">{cards}</div>
@@ -606,11 +625,66 @@ def build():
 <section class="section"><div class="wrap narrow prose">{paras(PAGES['privacy'])}</div></section>"""
     write('privacy.html', layout('Privacy e cookie — Kinesiologia Studio', 'Informativa sul trattamento dei dati personali e sui cookie del sito kinesiologiastudio.it.', body, canonical='privacy.html'))
 
+    # COME FUNZIONA IL CORPO: la libreria di anatomia condivisa con l'app.
+    # Gli schemi sono SVG che usano le variabili di colore dell'app; l'unica
+    # che manca nel css del sito (--surface-2) viene definita sulla figura.
+    anat = load_anatomia()
+    if anat:
+        FIG = '--surface-2: var(--brand-soft);'
+        stile_fig = '<style>.fig{margin:0 0 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px}.fig svg{width:100%;height:auto;display:block;max-height:300px}</style>'
+        cards = ''.join(f"""<a class="card" href="{v['slug']}.html">
+      <figure class="fig" style="{FIG}">{v['svg']}</figure>
+      <p class="eyebrow">{esc(v['cat'])}</p><h3>{esc(v['title'])}</h3><p>{esc(v['preview'])}</p><span class="more">Leggi →</span></a>""" for v in anat)
+        body = f"""
+<section class="page-head"><div class="wrap">
+  <p class="eyebrow">Come funziona il corpo</p><h1>Anatomia spiegata a chi ha un fastidio</h1>
+  <p class="lead">Le principali articolazioni, i muscoli, i tendini, la fascia e le catene cinetiche: come sono fatti, cosa fanno, e perché quando uno smette di lavorare paga un altro. Uno schema per ogni voce, le stesse che trovi nell'app.</p>
+</div></section>
+<section class="section"><div class="wrap"><div class="grid-3">{cards}</div></div></section>
+{stile_fig}
+{app_strip(1)}
+"""
+        write('corpo/index.html', layout('Come funziona il corpo — Kinesiologia Studio', 'Anatomia, fisiologia e biomeccanica spiegate semplici: colonna, spalla, anca, ginocchio, piede, muscoli, tendini, fascia, catene cinetiche, mandibola. Con uno schema per ogni voce.', body, depth=1, canonical='corpo/index.html'))
+        for i, v in enumerate(anat):
+            prev_v = anat[i - 1] if i > 0 else None
+            next_v = anat[i + 1] if i < len(anat) - 1 else None
+            pn = '<nav class="prevnext">'
+            if prev_v: pn += f'<a href="{prev_v["slug"]}.html">← {esc(prev_v["title"])}</a>'
+            if next_v: pn += f'<a href="{next_v["slug"]}.html" class="right">{esc(next_v["title"])} →</a>'
+            pn += '</nav>'
+            url = 'corpo/%s.html' % v['slug']
+            share = f"""<div class="share"><span>Condividi:</span>
+  <a href="https://wa.me/?text={esc(v['title'])}%20{SITE['url']}/{url}" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={SITE['url']}/{url}" target="_blank" rel="noopener">Facebook</a>
+  <button type="button" data-copy="{SITE['url']}/{url}">Copia link</button></div>"""
+            body = f"""
+<article class="post">
+  <header class="page-head"><div class="wrap narrow">
+    <p class="eyebrow">Come funziona il corpo · {esc(v['cat'])} · Davide Scuderi</p>
+    <h1>{esc(v['title'])}</h1>
+  </div></header>
+  <div class="wrap narrow prose">
+    <figure class="fig" style="{FIG}">{v['svg']}</figure>
+    <p class="lead">{esc(v['preview'])}</p>
+    {paras(v['full'])}
+    <div class="card warn small"><p>Questa voce è informativa e non sostituisce una valutazione. Se hai un fastidio che dura o peggiora, parlane prima con il tuo medico.</p></div>
+    {share}
+    {pn}
+    <p><a class="more" href="index.html">← Tutte le voci di Come funziona il corpo</a></p>
+  </div>
+</article>
+{stile_fig}
+{app_strip(1)}
+{cta_block(1, title="Vuoi capire cosa succede nel tuo corpo?", text="Alla prima valutazione guardiamo come ti muovi tutto intero, e da lì si parte.")}
+"""
+            write(url, layout(v['title'] + ' — Kinesiologia Studio', v['preview'], body, depth=1, canonical=url, og_type='article'))
+
     # 404 + sitemap + robots
     body = """<section class="page-head"><div class="wrap narrow"><h1>Pagina non trovata</h1><p class="lead">Il sito è stato rinnovato e alcuni vecchi indirizzi non esistono più. Prova dalla <a href="/index.html">home</a> o dal <a href="/blog/index.html">blog</a>.</p></div></section>"""
     write('404.html', layout('Pagina non trovata — Kinesiologia Studio', 'Pagina non trovata', body, canonical='404.html'))
     urls = ['', 'prima-valutazione.html', 'trattamenti.html', 'chi-sono.html', 'contatti.html', 'regala.html', 'app.html', 'blog/index.html'] + \
-           ['problemi/%s.html' % p['slug'] for p in PROBLEMI] + [a['url'] for a in arts]
+           ['problemi/%s.html' % p['slug'] for p in PROBLEMI] + [a['url'] for a in arts] + \
+           (['corpo/index.html'] + ['corpo/%s.html' % v['slug'] for v in anat] if anat else [])
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
          ''.join('  <url><loc>%s/%s</loc></url>\n' % (SITE['url'], u) for u in urls) + '</urlset>\n'
     open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8').write(sm)
