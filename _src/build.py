@@ -122,6 +122,7 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{p}assets/style.css">
+<script src="{p}assets/cookie-consent.js"></script>
 {extra_head}
 </head>
 <body>
@@ -173,6 +174,18 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
 </footer>
 <script src="{p}assets/site.js"></script>
 <script src="{p}assets/conversion-events.js"></script>
+<script>
+// Conversioni Google Ads: ogni link "tel:" conta come Chiama, ogni link a
+// Calendly come Prenota. Sta qui, nel layout, cosi' vale per tutte le pagine
+// generate e non si perde piu' rigenerando il sito.
+document.addEventListener('click', function (e) {{
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a || typeof trackConversion !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if (h.indexOf('tel:') === 0) trackConversion('chiama');
+  else if (h.indexOf('calendly.com') !== -1) trackConversion('prenota');
+}});
+</script>
 {conteggio_letture()}
 </body>
 </html>"""
