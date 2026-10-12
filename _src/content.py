@@ -9,9 +9,11 @@ SITE = {
     'whatsapp': 'https://wa.me/393481514382?text=Ciao%20Davide%2C%20ti%20scrivo%20dal%20sito%3A%20',
     'google_reviews': 'https://www.google.com/maps/search/?api=1&query=Kinesiologia+Studio+Modena+Via+Capilupi',
     'app': 'https://davidemcb.github.io/kinesiologia-studio/',
+    'formazione': 'https://davidemcb.github.io/kinesiologia-studio/formazione/',
+    'whatsapp_formazione': 'https://wa.me/393481514382?text=Ciao%20Davide%2C%20vorrei%20informazioni%20sui%20corsi%20di%20formazione.%20Il%20mio%20nome%20%C3%A8%20',
     'piva': 'P.IVA 02887890362 · C.F. SCDDVD81D23B819L',
     'nav': [('La prima valutazione', 'prima-valutazione.html'), ('Problemi', 'problemi/mal-di-schiena.html'),
-            ('Trattamenti', 'trattamenti.html'), ('Blog', 'blog/index.html'), ('App', 'app.html'), ('Chi sono', 'chi-sono.html'),
+            ('Trattamenti', 'trattamenti.html'), ('Blog', 'blog/index.html'), ('App', 'app.html'), ('Formazione', 'formazione.html'), ('Chi sono', 'chi-sono.html'),
             ('Regala', 'regala.html'), ('Prenota', 'contatti.html')],
 }
 
@@ -113,7 +115,11 @@ Il mio percorso parte da lontano e tiene insieme corpo e persona. Sono naturopat
 
 Sono autore di «Vestirsi di Sé — manuale di automassaggio consapevole», e scrivo regolarmente articoli per i miei pazienti, che trovi nel blog e nell'app dello Studio. Scrivo per una ragione precisa. Un paziente che ha capito da dove viene il suo problema sa cosa fare da solo, e torna quando serve; uno che dipende da me torna sempre, e non è un buon segno. Preferisco il primo.
 
-Lo studio è in Via Capilupi 21 a Modena, zona direzionale Toscanini. Se vuoi capire se il tuo caso fa per me, scrivimi: ti rispondo io.""",
+Lo studio è in Via Capilupi 21 a Modena, zona direzionale Toscanini. Se vuoi capire se il tuo caso fa per me, scrivimi: ti rispondo io.
+
+## Insegno quello che faccio
+
+Tengo corsi di formazione professionale per massaggiatori e operatori del benessere, con il metodo che uso ogni giorno in studio: gruppi di massimo dieci allievi, tanta pratica sul lettino e un criterio solo, che la persona trattata senta un cambiamento già dalla prima seduta. Calendario e programmi sono nella pagina [Formazione professionale](formazione.html).""",
  },
  'privacy': """## Informativa privacy
 

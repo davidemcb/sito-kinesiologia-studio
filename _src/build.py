@@ -115,6 +115,35 @@ def conteggio_letture():
 </script>"""
 
 
+# Le quattro specialità hanno pagine scritte a mano (sinusite, atm, cefalea,
+# diaframma): qui ci sono solo le sezioni che le collegano da home e trattamenti.
+SPECIALITA_HOME = '''<section class="section" id="specialita">
+  <div class="wrap">
+    <p class="eyebrow">Specialità della casa</p>
+    <h2>Quattro cose su cui ho lavorato più che su tutto il resto</h2>
+    <p class="intro">Non sono trattamenti diversi: è lo stesso metodo, applicato a problemi su cui negli anni ho accumulato più ore e più mestiere. Ognuna ha la sua pagina, con i confini di quello che faccio e di quello che non faccio.</p>
+    <div class="grid-4"><a class="card prob-card" href="sinusite.html">
+      <span class="prob-icon">👃</span><h3>Naso chiuso, viso pesante, sinusite che torna</h3><p>Il raffreddore è passato ma il naso non si è riaperto. Linfodrenaggio del viso e del collo, e il respiro che nel frattempo è cambiato.</p><span class="more">Capire il perché →</span></a><a class="card prob-card" href="atm.html">
+      <span class="prob-icon">😬</span><h3>Mandibola, bruxismo e ATM</h3><p>Ti svegli con la mascella rigida, senti un clic quando apri la bocca. Lavoro insieme al dentista, ognuno per la sua parte.</p><span class="more">Capire il perché →</span></a><a class="card prob-card" href="cefalea.html">
+      <span class="prob-icon">🤕</span><h3>Mal di testa che parte dal collo</h3><p>Arriva sempre a fine giornata, sempre dallo stesso lato. Quando il collo c'entra davvero, e quando invece no.</p><span class="more">Capire il perché →</span></a><a class="card prob-card" href="diaframma.html">
+      <span class="prob-icon">🫁</span><h3>Respiro corto e tensione allo stomaco</h3><p>Respiri alto senza accorgertene, il fiato manca senza motivo. Il diaframma è dove la tensione diventa muscolo.</p><span class="more">Capire il perché →</span></a></div>
+  </div>
+</section>
+'''
+SPECIALITA_TRATTAMENTI = '''<section class="section" id="specialita">
+  <div class="wrap">
+    <p class="eyebrow">Specialità della casa</p>
+    <h2>Quattro trattamenti specifici</h2>
+    <p class="intro">Stesso metodo, stessi sessanta minuti, stesso prezzo della prima valutazione: cambia il punto di partenza. Sono i problemi su cui negli anni ho accumulato più ore e più mestiere, e ognuno ha la sua pagina con i confini di quello che faccio e di quello che non faccio.</p>
+    <div class="grid-4"><a class="card prob-card" href="sinusite.html">
+      <span class="prob-icon">👃</span><h3>Naso chiuso, viso pesante, sinusite che torna</h3><p>Linfodrenaggio del viso e del collo quando la fase acuta è passata ma il naso non si è riaperto.</p><span class="more">Vedi la pagina →</span></a><a class="card prob-card" href="atm.html">
+      <span class="prob-icon">😬</span><h3>Mandibola, bruxismo e ATM</h3><p>Mascella rigida al risveglio, clic quando apri la bocca. In collaborazione con il dentista.</p><span class="more">Vedi la pagina →</span></a><a class="card prob-card" href="cefalea.html">
+      <span class="prob-icon">🤕</span><h3>Mal di testa che parte dal collo</h3><p>Quando il collo c'entra davvero, e quando invece la strada è un'altra.</p><span class="more">Vedi la pagina →</span></a><a class="card prob-card" href="diaframma.html">
+      <span class="prob-icon">🫁</span><h3>Respiro corto e tensione allo stomaco</h3><p>Il diaframma è il punto dove la tensione smette di essere un'idea e diventa muscolo.</p><span class="more">Vedi la pagina →</span></a></div>
+  </div>
+</section>
+'''
+
 def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_head=''):
     p = '../' * depth
     nav = ''.join('<li><a href="%s%s"%s>%s</a></li>' % (p, h, ' class="cta"' if h == 'contatti.html' else '', t)
@@ -182,6 +211,7 @@ def layout(title, desc, body, depth=0, canonical='', og_type='website', extra_he
         <li><a href="{p}corpo/index.html">Come funziona il corpo</a></li>
         <li><a href="{p}regala.html">Regala un trattamento</a></li>
         <li><a href="{p}app.html">L'app dello Studio</a></li>
+        <li><a href="{p}formazione.html">Formazione per operatori</a></li>
         <li><a href="{p}privacy.html">Privacy e cookie</a></li>
       </ul>
     </div>
@@ -318,6 +348,7 @@ def build():
   </div>
 </section>
 
+{SPECIALITA_HOME}
 <section class="app-band" id="app">
   <div class="wrap split">
     <div>
@@ -363,6 +394,25 @@ def build():
       <blockquote class="card"><p>«Da più di un mese mi portavo avanti un forte dolore alla parte lombare. Davide è riuscito a sbloccarmi immediatamente: subito dopo mi sentivo veramente più libera e leggera.»</p><footer>Ilaria L.</footer></blockquote>
     </div>
     <p class="center small">Tre delle 33 recensioni, su 128, che parlano di un risultato in una o poche sedute. <a href="{SITE['google_reviews']}" target="_blank" rel="noopener">Leggile tutte su Google</a> · <a href="trattamenti.html">Quante sedute servono?</a></p>
+  </div>
+</section>
+
+<section class="section" id="formazione">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Per massaggiatori e operatori del benessere</p>
+      <h2>Insegno quello che faccio: la formazione professionale</h2>
+      <p>Lo stesso metodo che uso in studio, trasferito con le mani: corsi pratici a Modena, in gruppi di massimo dieci allievi, con un criterio solo. Chi riceve il trattamento deve sentire un cambiamento già dalla prima seduta.</p>
+      <p class="btn-row">
+        <a class="btn" href="formazione.html">Scopri i corsi</a>
+        <a class="btn btn-ghost" href="{SITE['formazione']}" target="_blank" rel="noopener">Calendario 2026-2027</a>
+      </p>
+    </div>
+    <div class="card quote-card">
+      <p class="eyebrow">Sei specializzazioni</p>
+      <p class="big-quote">Trattamento Kinesiologico Posturale, Madero Functional Massage, Massaggio Viscerale, Mapinda, Coppettazione, Anatomia &amp; Biomeccanica.</p>
+      <p class="small" style="color:#B9C4BD">Pre-iscrizione senza acconto · slide e attestato inclusi</p>
+    </div>
   </div>
 </section>
 
@@ -440,6 +490,7 @@ def build():
   <p class="note">{esc(TRATTAMENTI['nota'])}</p>
 </div></section>
 <section class="section alt"><div class="wrap prose">{paras(TRATTAMENTI['testo'])}</div></section>
+{SPECIALITA_TRATTAMENTI}
 {app_strip()}
 {cta_block()}
 """
@@ -634,6 +685,77 @@ def build():
 """
     write('app.html', layout("L'app dello Studio — Kinesiologia Studio Modena", "L'app gratuita dello Studio: promemoria del check-up, esercizi di prevenzione per zona, consiglio del giorno e diario del corpo. Si aggiunge alla schermata Home e funziona offline.", body, canonical='app.html'))
 
+    # FORMAZIONE (i programmi e il calendario vivono nel sito della formazione)
+    F = SITE['formazione']
+    corsi = [
+        ('1° e 2° livello', 'Trattamento Kinesiologico Posturale', "Il cuore del metodo: un trattamento total body che rilassa, allunga e decomprime il corpo dai piedi al cranio, lavorando sulle catene cinetiche. Il 2° livello approfondisce le catene muscolari e il protocollo completo.", '#corso-2026-10-17'),
+        ('1° e 2° livello', 'Madero Functional Massage', "Le tecniche del massaggio con il legno con un approccio funzionale: trattamenti estetici e decontratturanti, meno sforzo per chi li fa e risultati tangibili dal primo trattamento. Il 2° livello costruisce un approccio total-body.", '#corso-2027-02-20'),
+        ('1° e 2° livello', 'Massaggio Viscerale', "Il lavoro manuale sull'addome: nel 1° livello le basi, nel 2° i nove quadranti, le valvole del tratto digerente e il protocollo rilassamento, rilascio, riequilibrio. Spesso è il pezzo che manca quando una schiena o un respiro non si liberano.", '#corso-2027-05-29'),
+        ('Viso e cranio · Schiena e collo', 'Trattamento Mapinda', "Madero più pinda: il calore dei pinda rilassa e apre la fascia, poi gli strumenti Madero lavorano in profondità. Velocità e profondità, in modo piacevole, con uno sblocco già dalla prima seduta.", '#corso-2026-10-31'),
+        ('1 giornata', 'Coppettazione', "Coppettazione professionale, efficace e senza lividi: coppette morbide a ventosa e rigide a siringa, le cinque fasi di applicazione e i protocolli base per arti, addome, schiena e total body.", '#corso-2027-04-10'),
+        ('Da qui si parte · 2 giornate', 'Anatomia & Biomeccanica', "Il corso da cui partire: prima di trattare bisogna capire che cosa si sta facendo e perché. Leggere un corpo mentre lo tocchi, riconoscere i muscoli sotto le mani, capire dove intervenire e dove no.", '#corso-2027-06-19'),
+    ]
+    cards = ''.join(f"""<div class="card">
+      <p class="eyebrow">{esc(l)}</p><h3>{esc(n)}</h3>
+      <p>{esc(d)}</p>
+      <p><a class="more" href="{F}{a}" target="_blank" rel="noopener">Programma e date →</a></p>
+    </div>""" for l, n, d, a in corsi)
+    body = f"""
+<section class="page-head"><div class="wrap">
+  <p class="eyebrow">Per massaggiatori e operatori del benessere · Modena</p><h1>Formazione professionale, Metodo Davide Scuderi</h1>
+  <p class="lead">Lo stesso metodo che uso in studio, trasferito con le mani. Corsi pratici in gruppi di massimo dieci allievi, con un criterio solo: chi riceve il trattamento deve sentire un cambiamento già dalla prima seduta. Lo verifichi tu, sul lettino, con me accanto.</p>
+  <p class="btn-row">
+    <a class="btn" href="{F}" target="_blank" rel="noopener">Calendario, programmi e pre-iscrizione</a>
+    <a class="btn btn-ghost" href="#corsi">Le sei specializzazioni</a>
+  </p>
+  <p class="small">Calendario 2026-2027 · pre-iscrizione senza acconto · slide del corso e attestato di partecipazione inclusi.</p>
+</div></section>
+
+<section class="section" id="corsi"><div class="wrap">
+  <p class="eyebrow">Le specializzazioni</p>
+  <h2>Strade diverse, stesso obiettivo: sbloccare il corpo in fretta</h2>
+  <p class="intro">Ogni percorso lavora su un piano diverso del corpo. Puoi seguirne uno solo o combinarli: insieme formano un metodo completo. Il programma dettagliato di ogni corso, con benefici per i clienti e date, è nel sito della formazione.</p>
+  <div class="grid-3">{cards}</div>
+</div></section>
+
+<section class="section alt"><div class="wrap split">
+  <div>
+    <h2>Come lavoro nei corsi</h2>
+    <ul class="ticks">
+      <li><strong>Massimo dieci allievi</strong>, per mettere le mie mani sulle tue e correggere pressione, direzione e ritmo</li>
+      <li><strong>Pratica, non slide</strong>: la maggior parte del tempo si lavora sul lettino, su persone vere</li>
+      <li><strong>Risultato immediato</strong>: ogni tecnica che insegno la scelgo perché funziona nella prima seduta, e lo si verifica prima e dopo</li>
+      <li><strong>Sai perché funziona</strong>: ogni manovra ha una logica anatomica e biomeccanica</li>
+      <li><strong>Slide e attestato</strong> inclusi, pre-iscrizione gratuita, acconto solo alla conferma circa 40 giorni prima</li>
+    </ul>
+    <p class="btn-row"><a class="btn" href="{F}" target="_blank" rel="noopener">Vai al calendario</a></p>
+  </div>
+  <div class="card">
+    <p class="eyebrow">Da dove partire</p>
+    <ol class="steps">
+      <li><strong>Anatomia &amp; Biomeccanica</strong>: prima di trattare bisogna capire cosa si sta facendo e perché</li>
+      <li><strong>I corsi di 1° livello</strong>: Posturale, Madero, Viscerale</li>
+      <li><strong>Le specializzazioni</strong>: Mapinda viso e cranio, Mapinda schiena e collo, Coppettazione</li>
+      <li><strong>I 2° livelli</strong>, dopo il 1° della stessa disciplina</li>
+    </ol>
+    <p class="small">Ogni corso è completo in sé: l'ordine è un consiglio, non un obbligo.</p>
+  </div>
+</div></section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Vuoi un posto in uno dei corsi?</h2>
+    <p>I posti sono dieci per corso. Scegli la data nel calendario e pre-iscriviti senza acconto, oppure scrivimi direttamente.</p>
+    <p class="btn-row">
+      <a class="btn btn-light" href="{F}" target="_blank" rel="noopener">Calendario e pre-iscrizione</a>
+      <a class="btn btn-outline-light" href="{SITE['whatsapp_formazione']}" target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
+    </p>
+    <p class="small">Corsi a Modena, via Capilupi 21 · docente Dott. Davide Scuderi, massoterapista, chinesiologo, naturopata e kinesiologo</p>
+  </div>
+</section>
+"""
+    write('formazione.html', layout('Formazione professionale per massaggiatori e operatori — Metodo Davide Scuderi', 'Corsi pratici a Modena, massimo dieci allievi: Trattamento Kinesiologico Posturale, Madero Functional Massage, Massaggio Viscerale, Mapinda, Coppettazione, Anatomia e Biomeccanica. Impari a far sentire ai tuoi clienti un cambiamento già dalla prima seduta.', body, canonical='formazione.html'))
+
     # PRIVACY
     body = f"""<section class="page-head"><div class="wrap narrow"><p class="eyebrow">Informativa</p><h1>Privacy e cookie</h1></div></section>
 <section class="section"><div class="wrap narrow prose">{paras(PAGES['privacy'])}</div></section>"""
@@ -696,7 +818,8 @@ def build():
     # 404 + sitemap + robots
     body = """<section class="page-head"><div class="wrap narrow"><h1>Pagina non trovata</h1><p class="lead">Il sito è stato rinnovato e alcuni vecchi indirizzi non esistono più. Prova dalla <a href="/index.html">home</a> o dal <a href="/blog/index.html">blog</a>.</p></div></section>"""
     write('404.html', layout('Pagina non trovata — Kinesiologia Studio', 'Pagina non trovata', body, canonical='404.html'))
-    urls = ['', 'prima-valutazione.html', 'trattamenti.html', 'chi-sono.html', 'contatti.html', 'regala.html', 'app.html', 'blog/index.html'] + \
+    urls = ['', 'prima-valutazione.html', 'trattamenti.html', 'chi-sono.html', 'contatti.html', 'regala.html', 'app.html', 'formazione.html', 'blog/index.html',
+            'sinusite.html', 'atm.html', 'cefalea.html', 'diaframma.html'] + \
            ['problemi/%s.html' % p['slug'] for p in PROBLEMI] + [a['url'] for a in arts] + \
            (['corpo/index.html'] + ['corpo/%s.html' % v['slug'] for v in anat] if anat else [])
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
