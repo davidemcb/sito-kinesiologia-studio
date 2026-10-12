@@ -181,3 +181,11 @@ em{font-style:italic}
 .media-band{padding:10px 0 26px}
 .split .photo{margin-bottom:18px}
 .portrait img{aspect-ratio:4/5}
+
+/* Condivisione delle schede dei corsi (formazione.html) */
+.corso-card .btn-row{margin-top:auto;gap:8px}
+.corso-card{display:flex;flex-direction:column}
+.condividi{display:none;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.condividi.aperto{display:flex}
+.condividi a,.condividi button{display:inline-block;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font:600 .82rem inherit;font-family:inherit;text-decoration:none;cursor:pointer}
+.condividi a:hover,.condividi button:hover{border-color:var(--brand);color:var(--brand-strong)}

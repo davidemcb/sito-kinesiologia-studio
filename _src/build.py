@@ -18,6 +18,10 @@ def slugify(s):
 
 def esc(s): return html.escape(s, quote=True)
 
+def urlq(s):
+    import urllib.parse
+    return urllib.parse.quote(s, safe='')
+
 def paras(text):
     """Testo con doppie righe vuote -> paragrafi. Supporta **grassetto** e liste con '- '."""
     out = []
@@ -695,10 +699,14 @@ def build():
         ('1 giornata', 'Coppettazione', "Coppettazione professionale, efficace e senza lividi: coppette morbide a ventosa e rigide a siringa, le cinque fasi di applicazione e i protocolli base per arti, addome, schiena e total body.", '#corso-2027-04-10'),
         ('Da qui si parte · 2 giornate', 'Anatomia & Biomeccanica', "Il corso da cui partire: prima di trattare bisogna capire che cosa si sta facendo e perché. Leggere un corpo mentre lo tocchi, riconoscere i muscoli sotto le mani, capire dove intervenire e dove no.", '#corso-2027-06-19'),
     ]
-    cards = ''.join(f"""<div class="card">
+    cards = ''.join(f"""<div class="card corso-card" data-nome="{esc(n)}" data-url="{F}{a}">
       <p class="eyebrow">{esc(l)}</p><h3>{esc(n)}</h3>
       <p>{esc(d)}</p>
-      <p><a class="more" href="{F}{a}" target="_blank" rel="noopener">Programma e date →</a></p>
+      <p class="btn-row"><a class="btn btn-sm" href="{F}{a}" target="_blank" rel="noopener">Programma e date</a><button type="button" class="btn btn-sm btn-ghost condividi-btn">&#8679; Condividi</button></p>
+      <div class="condividi"><span>Condividi:</span>
+        <a href="https://wa.me/?text={esc(urlq('Corso "' + n + '", formazione professionale Metodo Davide Scuderi a Modena. Programma e date: ' + F + a))}" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={esc(urlq(F + a))}" target="_blank" rel="noopener">Facebook</a>
+        <button type="button" class="copia" data-copy="{F}{a}">Copia link</button></div>
     </div>""" for l, n, d, a in corsi)
     body = f"""
 <section class="page-head"><div class="wrap">
@@ -753,6 +761,23 @@ def build():
     <p class="small">Corsi a Modena, via Capilupi 21 · docente Dott. Davide Scuderi, massoterapista, chinesiologo, naturopata e kinesiologo</p>
   </div>
 </section>
+<script>
+// Condividi la scheda di un corso: menu del telefono se c'e', altrimenti WhatsApp, Facebook e copia link.
+document.querySelectorAll('.corso-card').forEach(function (card) {{
+  var nome = card.getAttribute('data-nome'), url = card.getAttribute('data-url');
+  var box = card.querySelector('.condividi'), btn = card.querySelector('.condividi-btn'), copia = card.querySelector('.copia');
+  btn.addEventListener('click', function () {{
+    if (navigator.share) {{
+      navigator.share({{ title: nome + ' - Formazione professionale Metodo Davide Scuderi', text: 'Corso "' + nome + '", formazione professionale a Modena. Programma e date:', url: url }}).catch(function () {{}});
+    }} else {{ box.classList.toggle('aperto'); }}
+  }});
+  copia.addEventListener('click', function () {{
+    var fatto = function () {{ copia.textContent = 'Copiato!'; setTimeout(function () {{ copia.textContent = 'Copia link'; }}, 2000); }};
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(fatto, function () {{ window.prompt('Copia il link:', url); }});
+    else window.prompt('Copia il link:', url);
+  }});
+}});
+</script>
 """
     write('formazione.html', layout('Formazione professionale per massaggiatori e operatori — Metodo Davide Scuderi', 'Corsi pratici a Modena, massimo dieci allievi: Trattamento Kinesiologico Posturale, Madero Functional Massage, Massaggio Viscerale, Mapinda, Coppettazione, Anatomia e Biomeccanica. Impari a far sentire ai tuoi clienti un cambiamento già dalla prima seduta.', body, canonical='formazione.html'))
 
