@@ -182,6 +182,9 @@ em{font-style:italic}
 .split .photo{margin-bottom:18px}
 .portrait img{aspect-ratio:4/5}
 
+/* Formazione su richiesta: due colonne, una sul telefono */
+@media(max-width:640px){#su-richiesta .grid-3{grid-template-columns:1fr!important}}
+
 /* Condivisione delle schede dei corsi (formazione.html) */
 .corso-card .btn-row{margin-top:auto;gap:8px}
 .corso-card{display:flex;flex-direction:column}

@@ -750,6 +750,25 @@ def build():
   </div>
 </div></section>
 
+<section class="section" id="su-richiesta"><div class="wrap">
+  <p class="eyebrow">Formazione su richiesta</p>
+  <h2>Non trovi la data giusta? Le date le facciamo insieme.</h2>
+  <p class="intro">Oltre al calendario, puoi richiedere una formazione costruita su di te o sul tuo centro: scegli il corso o la tecnica, proponi le date e organizziamo il resto.</p>
+  <div class="grid-3" style="grid-template-columns:repeat(2,1fr)">
+    <div class="card">
+      <p class="eyebrow">Individuale o in 2-3</p><h3>Personal coaching</h3>
+      <p>Una formazione individuale, o in un gruppo piccolissimo, su una tecnica o su un corso intero. Il programma si adatta a te: al tuo livello, alle persone che tratti, ai casi che ti mettono in difficoltà. In studio a Modena, nelle date che concordiamo, anche infrasettimanali.</p>
+      <p class="btn-row"><a class="btn btn-sm" href="https://wa.me/393481514382?text=Ciao%20Davide%2C%20vorrei%20informazioni%20per%20un%20personal%20coaching%20su%20%5Bcorso%20o%20tecnica%5D.%20Sono%20di%20%5Bcitt%C3%A0%5D%20e%20le%20date%20che%20preferirei%20sono%20%5B...%5D.%20Il%20mio%20nome%20%C3%A8%20" target="_blank" rel="noopener">Richiedi un personal coaching</a></p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Nella tua sede, in tutta Italia</p><h3>Corsi nel tuo centro o nella tua scuola</h3>
+      <p>Porto la formazione da te: centri estetici, studi di massaggio, palestre, centri olistici e scuole di formazione. Un corso del calendario o un programma costruito per il tuo gruppo, con le date che decidi tu. Massimo dieci allievi, attestato per ciascuno.</p>
+      <p class="btn-row"><a class="btn btn-sm" href="https://wa.me/393481514382?text=Ciao%20Davide%2C%20vorrei%20portare%20un%20corso%20di%20formazione%20nel%20mio%20centro%2Fscuola%20a%20%5Bcitt%C3%A0%5D%3A%20ci%20interessa%20%5Bcorso%20o%20tecnica%5D%20per%20circa%20%5Bnumero%5D%20operatori.%20Il%20mio%20nome%20%C3%A8%20" target="_blank" rel="noopener">Porta un corso nel tuo centro</a></p>
+    </div>
+  </div>
+  <p class="note">Scrivimi su WhatsApp con il corso o la tecnica che ti interessa, la città e le date che preferiresti: ti rispondo io con una proposta.</p>
+</div></section>
+
 <section class="cta-band">
   <div class="wrap">
     <h2>Vuoi un posto in uno dei corsi?</h2>
